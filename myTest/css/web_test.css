@@ -1,0 +1,82 @@
+/*chỉnh vị trí của thẻ đăng nhập ở vị trí tốt nhất*/
+/**/
+/**/
+/**/
+/**/
+.form_login{
+    position: relative;
+    left: 500px;
+    margin-top: 1px;
+    border-style: solid;
+    border-width: 1px;
+    height: 400px;
+    width: 400px;
+    padding-top: 40px;
+    padding-left: 50px;
+    animation: moveLeft 1s ease-out;
+
+}
+/*chỉnh size cho khung nhập tên và mật khẩu*/
+.form_login #username, #password{
+    width: 300px;
+}
+/*chỉnh khoản cách của các nút bấm */
+.button{
+    text-transform: uppercase;
+    background-color:rgb(3, 3, 141);
+    text-decoration: none;
+    color:white;
+    padding:15px 30px;
+    border-radius: 50px;
+    min-width: 250px;
+    text-align: center;
+    position: relative;
+    top: 10px;
+}
+/*khi đưa chuột vào button*/
+.button:hover{
+    background-color: rgb(2, 2, 250);
+}
+/*khi kích hoạt vào button*/
+.button:active
+{
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgb(0 , 0 , 0 ,.2);
+}
+
+
+
+#logo{
+    height: 300px;
+    margin-left: 50px;
+    position: relative;
+    left: 500px;
+    animation: moveRight 1s ease-out;
+}
+@keyframes moveLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80%{
+        transform: translateX(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80%{
+        transform: translateX(-20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

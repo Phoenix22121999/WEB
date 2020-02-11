@@ -1,0 +1,181 @@
+
+/**/
+/**/
+/**/
+/**/
+*{
+    margin: 0px;
+    padding: 0px;
+
+}
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: gray;
+}
+#Heading_web{
+    display: inline;
+}
+#div_menu_Main{
+    background-color: darkgrey;
+    height: 70px;
+}
+ul.menu_Main{
+    margin:0 ;
+    padding: 0;
+    list-style-type: none;
+}
+/*định đạng menu chính dấu ">" có nghĩa chỉ lấy thẻ li ngay phía sau nó*/
+ul.menu_Main > li{
+    float: left;
+}
+ul.menu_Main > li > a{
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    padding: 15px  15px;
+    display: block;
+    line-height: 40px;
+}
+
+ul.menu_Main > li > a:hover{
+    background-color: dimgrey;
+}
+
+ul.menu_type_film, 
+ul.menu_Country{
+   background-color: darkgray;
+   min-height: 150px;
+   width: 250px;
+   display: none;
+   position: absolute;
+   
+}
+ul.menu_type_film li,
+ul.menu_Country li {
+    list-style-type: none;
+    position: relative ;
+    
+}
+ul.menu_type_film li a,
+ul.menu_Country li a
+{
+    text-decoration: none;
+    border-bottom: 1px solid white;
+    display: block;
+    line-height: 40px;
+    color: white;
+}
+/*Sau khi đưa chuột vào thẻ Li ở thẻ ul có tên class là menu_Main lúc này sẽ đổi định dạng display của 
+thẻ ul tên class là menu_type_film từ none sang block*/ 
+ul.menu_Main > li:hover ul.menu_type_film
+{
+    display: block;
+}
+/*Sau khi đưa chuột vào thẻ Li ở thẻ ul có tên class là menu_Main lúc này sẽ đổi định dạng display 
+của thẻ ul tên class là menu_Country từ none sang block*/ 
+
+ul.menu_Main > li:hover ul.menu_Country
+{
+    display: block;
+}
+
+.search{
+    position:relative;
+    display:block;
+    color:white;
+    padding:14px 16px;
+    line-height: 40px;    
+}
+ul.menu_Main li.search{
+    float: right;
+}
+.search-box{
+    position:absolute;
+    display:none;
+    right:0;
+    top:45px;
+}
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+    outline:none;
+    padding: 12px 14px;
+    transition: width 0.4s ease-in-out;
+}
+.search:hover{
+    color:black;
+}
+.search:hover .search-box{
+    display:block;
+}
+form input[type="text"]:focus{
+    width:500px;
+}
+
+img.poster{
+    width: 200px;
+    height: 300px;
+}
+div.body_web div{
+    display: inline-block;
+    padding-left: 55px;
+    padding-top: 20px;
+
+}
+/*Định dạng form phim hành động ngoài trang chủ*/
+.film_hanhDong, .film_KinhDi{
+    background-color: black;
+    width: 100%;
+    padding-bottom: 10px;
+    color: white;
+    margin-bottom: 30px;
+}
+.film_hanhDong a , .film_KinhDi a{
+    text-decoration: none;
+}
+
+
+
+
+@keyframes moveRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80%{
+        transform: translateX(-20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80%{
+        transform: translateX(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveDown{
+    0%{
+        opacity: 0;
+        transform: translateY(-100);
+    }
+    80%{
+        transform: translateY(20px) ;
+    }
+    100%{
+        opacity: 1;
+        transform:translateY(0);
+    }
+}

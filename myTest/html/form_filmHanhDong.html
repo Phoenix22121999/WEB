@@ -4,166 +4,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/main_course.css">
     <title>Phim Hành Động</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../css/main_course.css">
 </head>
 
 <body>
     <div id="Heading_web">
-        <a href="/html/main_course.html"><img src="/picture/logo1.png" alt="my_logo" id="logo"></a>
+        <a href="./index.html"><img src="../picture/logo1.png" alt="my_logo" id="logo"></a>
     </div>
-    <div id="div_menu_Main">
-        <ul class="menu_Main">
-            <li id="li_theLoai"><a href="#">Thể Loại</a>
-                <ul class="menu_type_film">
-                    <li><a href="#">Hành Động</a></li>
-                    <li><a href="#">Khoa Học - Viễn Tưởng</a></li>
-                    <li><a href="#">Tình Cảm</a></li>
-                    <li><a href="#">Chiến Tranh</a></li>
-                    <li><a href="#">Thần Thoại</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Quốc Gia</a>
-
-                <ul class="menu_Country">
-                    <li><a href="#">Mỹ</a></li>
-                    <li><a href="#">Hàn Quốc</a></li>
-                    <li><a href="#">Trung Quốc</a></li>
-                    <li><a href="#">Việt Nam</a></li>
-                    <li><a href="#">Nhật Bản</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Phim Bộ</a></li>
-            <li><a href="#">TV Show</a></li>
-            <li><a href="#">Phim Sắp Chiếu</a></li>
-            <li><a href="#">Hoạt Hình</a></li>
-            <li class="search">
-                Tìm Kiếm
-                <div class="search-box">
-                    <form>
-                        <input type="text" name="Search" placeholder="Search...">
-                    </form>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- div_menu_Main -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
+            <div class="navbar-nav">
+                <div class="nav-item dropdown">
+                    <a class="navitem nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" href="#">Thể
+                        Loại</a>
+                    <div class="dropdown-menu">
+                        <!-- menu_type_film -->
+                        <a class="dropdown-item" href="#">Hành Động</a>
+                        <a class="dropdown-item" href="#">Kinh Dị</a>
+                        <a class="dropdown-item" href="#">Võ Thuật</a>
+                        <a class="dropdown-item" href="#">Thần Thoại</a>
+                    </div>
                 </div>
-            </li>
-        </ul>
-    </div>
-    <div class="body_web">
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" href="#">Quốc Gia</a>
+                    <div class="dropdown-menu">
+                        <!-- menu_type_film -->
+                        <a class="dropdown-item" href="#">Mỹ</a>
+                        <a class="dropdown-item" href="#">Hàn Quốc</a>
+                        <a class="dropdown-item" href="#">Trung Quốc</a>
+                        <a class="dropdown-item" href="#">Thái Lan</a>
+                    </div>
+                </div>
+                <a class="nav-item nav-link" href="#">Phim Bộ</a>
+                <a class="nav-item nav-link" href="#">Phim Sắp Chiếu</a>
+                <a class="nav-item nav-link" href="#">Hoạt Hình</a>
+            </div>
+            <div class="navbar-nav">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="body_web col-12">
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_dibiet.jpg"
-                    alt="poster_dibiet"></a>
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_dibiet.jpg" 
+                alt="poster_dibiet"></a>
             <p class="tiltle">Dị Biệt</p>
             <p class="sub_tiltle">Divergent</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_haiphuong.jpg"
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_haiphuong.jpg"
                     alt="poster_haiphuong"></a>
             <p class="tiltle">Hai Phượng</p>
             <p class="sub_tiltle">Hai Phuong</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_quatimthep.jpg"
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_quatimthep.jpg"
                     alt="poster_quatimthep"></a>
             <p class="tiltle">Quả Tim Thép</p>
             <p class="sub_tiltle">Bleeding Steel</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_fast1.jpg"
-                    alt="poster_fast1"></a>
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_fast1.jpg" 
+                alt="poster_fast1"></a>
             <p class="tiltle">Quá Nhanh Quá Nguy Hiểm 1</p>
             <p class="sub_tiltle">Fast & Furious 1</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_fast2.jpg"
-                    alt="poster_fast2"></a>
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_fast2.jpg" 
+                alt="poster_fast2"></a>
             <p class="tiltle">Quá Nhanh Quá Nguy Hiểm 2</p>
             <p class="sub_tiltle">Fast & Furious 2</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_fast3.jpg"
-                    alt="poster_fast3"></a>
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_fast3.jpg" 
+                alt="poster_fast3"></a>
             <p class="tiltle">Quá Nhanh Quá Nguy Hiểm 3</p>
             <p class="sub_tiltle">Fast & Furious 3</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_fast4.jpg"
-                    alt="poster_fast4"></a>
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_fast4.jpg" 
+                alt="poster_fast4"></a>
             <p class="tiltle">Quá Nhanh Quá Nguy Hiểm 4</p>
             <p class="sub_tiltle">Fast & Furious 4</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_fast5.jpg"
-                    alt="poster_fast5"></a>
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_fast5.jpg" 
+                alt="poster_fast5"></a>
             <p class="tiltle">Quá Nhanh Quá Nguy Hiểm 5</p>
             <p class="sub_tiltle">Fast & Furious 5</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_fast6.jpg"
-                    alt="poster_fast6"></a>
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_fast6.jpg" 
+                alt="poster_fast6"></a>
             <p class="tiltle">Quá Nhanh Quá Nguy Hiểm 6</p>
             <p class="sub_tiltle">Fast & Furious 6</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_fast7.jpg"
-                    alt="poster_fast7"></a>
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_fast7.jpg" 
+                alt="poster_fast7"></a>
             <p class="tiltle">Quá Nhanh Quá Nguy Hiểm 7</p>
             <p class="sub_tiltle">Fast & Furious 7</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_fast8.jpg"
-                    alt="poster_fast8"></a>
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_fast8.jpg" 
+                alt="poster_fast8"></a>
             <p class="tiltle">Quá Nhanh Quá Nguy Hiểm 8</p>
             <p class="sub_tiltle">Fast & Furious 8</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_hobb&shaw.jpg"
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_hobb&shaw.jpg"
                     alt="poster_hobb&shaw"></a>
             <p class="tiltle">Hobbs and Shaw</p>
             <p class="sub_tiltle">Hobbs and Shaw </p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_hungergame.jpg"
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_hungergame.jpg"
                     alt="poster_hungergame1"></a>
             <p class="tiltle">Đấu Trường Sinh Tử 1</p>
             <p class="sub_tiltle">Hunger Game</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_thehungergame2.jpg"
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_thehungergame2.jpg"
                     alt="poster_hungergame2"></a>
             <p class="tiltle">Đấu Trường Sinh Tử 2:Bắt Lửa</p>
             <p class="sub_tiltle">Hunger Game:Catching Fire</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_thehungergame-part1.jpg"
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_thehungergame-part1.jpg"
                     alt="poster_thehungergame-part1"></a>
             <p class="tiltle">Đấu Trường Sinh Tử: Húng Nhại 1</p>
             <p class="sub_tiltle">Hunger game: Mockingjay 1</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_ipman.jpg"
-                    alt="poster_ipman"></a>
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman.jpg" 
+                alt="poster_ipman"></a>
             <p class="tiltle">Diệp Vấn</p>
             <p class="sub_tiltle">IP MAN</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_ipman2.jpg"
-                    alt="poster_ipman2"></a>
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman2.jpg" 
+                alt="poster_ipman2"></a>
             <p class="tiltle">Diệp Vấn 2</p>
             <p class="sub_tiltle">IP MAN 2</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_ipman3.jpg"
-                    alt="poster_ipman3"></a>
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman3.jpg" 
+                alt="poster_ipman3"></a>
             <p class="tiltle">Diệp Vấn 3</p>
             <p class="sub_tiltle">IP MAN 3</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_ipman4.jpg"
-                    alt="poster_ipman4"></a>
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman4.jpg" 
+                alt="poster_ipman4"></a>
             <p class="tiltle">Diệp Vấn 4</p>
             <p class="sub_tiltle">IP MAN 4</p>
         </div>
         <div>
-            <a href="#"><img class="poster" src="/picture/poster/HanhDong/poster_thehungergame-part2.jpg"
+            <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_thehungergame-part2.jpg"
                     alt="poster_thehungergame-part2"></a>
             <p class="tiltle">Đấu Trường Sinh Tử: Húng Nhại 2</p>
             <p class="sub_tiltle">Hunger game: Mockingjay 2</p>

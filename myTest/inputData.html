@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>InputData</title>
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4"
+                src="https://image.winudf.com/v2/image/Y29tLm13Zy50aGVnaW9pZGlkb25nX2ljb25fdDB4d29jMGI/icon.png?w=170&fakeurl=1"
+                alt="" width="72" height="72">
+            <h2>Add Product</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md order-md-1">
+                <form action="inputData.php" method="POST" enctype="multipart/form-data">
+
+                    <div class="mb-3">
+                        <label for="name">Title</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="title" name="title" required>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="time">Time</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="time" name="time" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="date">Date</label>
+                        <div class="input-group">
+                            <input type="date" class="form-control" id="date" name="date" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description">Description</label>
+                        <div class="input-group">
+                            <textarea class="form-control" id="description" name="description" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fileUpload">Image</label>
+                        <div class="input-group">
+                            <input type="file" id="fileUpload" name="fileUpload" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="rate">rate</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="rate" name="rate" required>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<!--<iframe name="frame" style="display: none"></iframe>-->
+
+</html>

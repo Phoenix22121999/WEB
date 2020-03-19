@@ -5,18 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <form action="test.php" method="post">
-        <div class="mb-3">
-            <label for="time">Time</label>
-            <div class="input-group">
-                <input type="number" class="form-control" id="time" name="time" required>
-            </div>
-        </div>
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Add</button>
-    </form>
+    <form class="form-horizontal" id="form_input">
+        <input type="text" name="user">
+        <button type="submit">Gửi</button>
+      </form>
+    <div id="content">DAT</div>
+    <script type="text/javascript">
+   $(document).ready(function()
+   { 
+      //khai báo biến submit form lấy đối tượng nút submit
+      var submit = $("button[type='submit']");
+
+      //khi nút submit được click
+      submit.click(function()
+      {
+        //khai báo các biến dữ liệu gửi lên server
+        var user = $("input[name='user']").val(); //lấy giá trị trong input user
+ 
+        //Kiểm tra xem trường đã được nhập hay chưa
+        if(user == ''){
+          alert('Vui lòng nhập Tên người dùng');
+          return false;
+        }
+ 
+        //Lấy toàn bộ dữ liệu trong Form
+        var datas = $('form#form_input').serialize();
+      
+        //Sử dụng phương thức Ajax.
+        $.ajax({
+              type : 'POST', //Sử dụng kiểu gửi dữ liệu POST
+              url : 'test.php', //gửi dữ liệu sang trang data.php
+              data : datas, //dữ liệu sẽ được gửi
+              success : function(data)  // Hàm thực thi khi nhận dữ liệu được từ server
+                        { 
+                        if(data == 'false') 
+                        {
+                            alert('Không có người dùng');
+                        }else{
+                            $('#content').css({
+                                'color': data
+                            })
+                        }
+                        }
+              });
+              return false;
+        });
+    });
+</script>
 </body>
 
 </html>

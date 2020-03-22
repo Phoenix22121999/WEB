@@ -1,36 +1,41 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "cayphim";
-    echo " đã vào file-";
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if (!$conn) {
-        exit('Kết nối không thành công!');
-    }
-    echo "kết nối thành công";
-    $sql = "SELECT movies_id FROM movies 
-            ORDER BY movies_id DESC 
-            LIMIT 5;";
-    $result = mysqli_query($conn, $sql);
-    
-    
-    if ($result) {
-        echo "lấy đc kết quả";
-        // Hàm `mysql_fetch_row()` sẽ chỉ fetch dữ liệu một record mỗi lần được gọi
-        // do đó cần sử dụng vòng lặp While để lặp qua toàn bộ dữ liệu trên bảng posts
-        echo "d";
-        while ($row = mysqli_fetch_row($result)) {
-            $target_dir = "picture/poster/" . $row[0] ."jpg";
-            //echo $target_dir . "-";
-        }
-        $target_dir = "picture/poster/";
-        $arr = explode(".", $_FILES["fileUpload"]["name"]);
-        $target_file = $target_dir . $row[0] . "." . end($arr);
-        mysqli_free_result($result);
-    }else{
-        echo "ko lấy đc kết quả";
-    }
-    $conn->close();
+    /*$data =new stdClass();
+    $data1 =new stdClass();
+    $data2 =new stdClass();
+
+    $data1-> name = 'dat';
+    $data1-> id = 1;
+    $data2-> name = 'loc';
+    $data2-> id = 2;
+    $data = array($data1,$data2);
+    $data_json = json_encode($data);
+    echo $_POST['name'];
+    $data1 = array( 'name'=>'dat','id' => 1);
+    $data2 = array( 'name'=>'loc','id' => 2);
+    $data = array('data1'=> $data1,'data2'=> $data2);
+    $data_json = json_encode($data);
+    echo $data_json;
+    $dataInput = file_get_contents('php://input');
+    $decode = json_decode($dataInput,true);
+    //echo var_dump($decode);
+    $encode = json_encode($decode);
+    echo $encode;
+    */
+    $movie_1="movie_1";
+    $movie_2="movie_2";
+    $movie_3="movie_3";
+    $movie_4="movie_4";
+    $movie_5="movie_5";
+    $id1=1;
+    $id2=2;
+    $data=array();
+    $name1='date';
+    ${'data'.$id1} = array( 'name'=>'dat','id' => 1);
+    $data2 = array( 'name'=>'loc','id' => 2);
+    $data['movie_'.$id1] = array( 'name'=>'dat','id' => 5);
+    $data['movie_'.$id2] = array( 'name'=>'loc','id' => 2);
+    $data_final["HanhDong"]= $data;
+    $data_json = json_encode($data_final);
+    echo $data_json;
+    echo $data['movie_1']["name"]
 ?>

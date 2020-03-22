@@ -10,56 +10,18 @@
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
+    <script src="test.js"></script>
 </head>
 
 <body>
     <form class="form-horizontal" id="form_input">
         <input type="text" name="user">
         <button type="submit">Gửi</button>
-      </form>
-    <div id="content">DAT</div>
-    <script type="text/javascript">
-   $(document).ready(function()
-   { 
-      //khai báo biến submit form lấy đối tượng nút submit
-      var submit = $("button[type='submit']");
-
-      //khi nút submit được click
-      submit.click(function()
-      {
-        //khai báo các biến dữ liệu gửi lên server
-        var user = $("input[name='user']").val(); //lấy giá trị trong input user
- 
-        //Kiểm tra xem trường đã được nhập hay chưa
-        if(user == ''){
-          alert('Vui lòng nhập Tên người dùng');
-          return false;
-        }
- 
-        //Lấy toàn bộ dữ liệu trong Form
-        var datas = $('form#form_input').serialize();
-      
-        //Sử dụng phương thức Ajax.
-        $.ajax({
-              type : 'POST', //Sử dụng kiểu gửi dữ liệu POST
-              url : 'test.php', //gửi dữ liệu sang trang data.php
-              data : datas, //dữ liệu sẽ được gửi
-              success : function(data)  // Hàm thực thi khi nhận dữ liệu được từ server
-                        { 
-                        if(data == 'false') 
-                        {
-                            alert('Không có người dùng');
-                        }else{
-                            $('#content').css({
-                                'color': data
-                            })
-                        }
-                        }
-              });
-              return false;
-        });
-    });
-</script>
+    </form>
+    <div id="content1"></div>
+    <div id="content2"></div>
+    <div id="content3"></div>
+    <div id="content4"></div>
 </body>
 
 </html>

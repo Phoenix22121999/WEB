@@ -1,13 +1,9 @@
 $(document).ready(function () {
-    $.ajax({
-        type: "Post",
-        url: "../php/loadPage.php",
-        success: function (response) {
-            var arr = response.split("-")
-            $('.action_1').attr({
-                'src': arr[0]
-            });
-            $('.test').html(arr[1]);
-        }
-    });;
+   console.log("main")
+   var data ={
+    genre: 1,
+    name: "dat",
+}
+var sendData = JSON.stringify(data);
+    console.log(sendData);
 });

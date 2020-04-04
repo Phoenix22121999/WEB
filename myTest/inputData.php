@@ -5,6 +5,7 @@ $description = $_POST["description"];
 $date = $_POST["date"];
 $rate = $_POST["rate"];
 $genre = $_POST["genre"];
+$link = $_POST["link"];
 $date_format = explode('-', $_POST['date']);
 $mysqldate = $date_format[0] . '-' . $date_format[1] . '-' . $date_format[2];
 echo $date . "<br>";
@@ -35,7 +36,7 @@ if ($genre=='HanhDong') {
 }elseif($genre=='ThanThoai'){
     $genre_id= 4;
 }
-$sql_1  =  "INSERT INTO movies (title, description, runtime, release_date, rating) VALUES ('$title', '$description', $time, '$mysqldate', $rate)";
+$sql_1  =  "INSERT INTO movies (title, description, runtime, release_date, rating, link) VALUES ('$title', '$description', $time, '$mysqldate', $rate,'$link')";
 $sql_2  =  "SELECT movies.movie_id 
             FROM movies
             WHERE movies.title =  '$title'";

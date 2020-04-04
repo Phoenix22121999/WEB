@@ -20,11 +20,12 @@
         // Hàm `mysql_fetch_row()` sẽ chỉ fetch dữ liệu một record mỗi lần được gọi
         // do đó cần sử dụng vòng lặp While để lặp qua toàn bộ dữ liệu trên bảng posts
         //echo "d";
-
+        $i=1;
         while ($row = mysqli_fetch_row($result)) {
             $target_dir = "picture/poster/HanhDong/" . $row[0] .".jpg";
-            $data_tmp{'movie_'.$row[0]} = array( 'link'=>$target_dir,'title' =>$row[1]);
+            $data_tmp{'movie_'.$i} = array( 'link'=>$target_dir,'title' =>$row[1]);
             //echo $target_dir . "-" .$row[1]. "-" ;
+            $i++;
         }
         $data["HanhDong"]=$data_tmp;
         $data_json = json_encode($data);
@@ -43,11 +44,12 @@
     // Hàm `mysql_fetch_row()` sẽ chỉ fetch dữ liệu một record mỗi lần được gọi
     // do đó cần sử dụng vòng lặp While để lặp qua toàn bộ dữ liệu trên bảng posts
     //echo "d";
-
+    $i=1;
     while ($row = mysqli_fetch_row($result)) {
         $target_dir = "picture/poster/KinhDi/" . $row[0] .".jpg";
-        $data_tmp{'movie_'.$row[0]} = array( 'link'=>$target_dir,'title' =>$row[1]);
+        $data_tmp{'movie_'.$i} = array( 'link'=>$target_dir,'title' =>$row[1]);
         //echo $target_dir . "-" .$row[1]. "-" ;
+        $i++;
     }
     $data["KinhDi"]=$data_tmp;
    

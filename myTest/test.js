@@ -4,7 +4,17 @@ $(document).ready(function()
         name : user
     };
     var sendData = JSON.stringify(data);*/
-    console.log("sendData");
+    //console.log("sendData");
+    /*for (let i = 1; i <= 5 ; i++) {
+        //$('#test').html(tmp_id); film_hanhDong a:nth-child(2)
+        console.log('.film_hanhDong div:nth-child('+ (i+1) +') a');
+        $('.film_hanhDong div:nth-child('+ (i+1) +') a img').attr({
+            'src': './picture/HanhDong/1.jpg'
+        });
+        //$('.film:nth-child('+ (i+1) +')').html("");
+        $('.film_hanhDong div:nth-child('+ (i+1) +') p').html('dat');
+    }*/
+
       //khai báo biến submit form lấy đối tượng nút submit
    /* var submit = $("button[type='submit']");
 
@@ -41,4 +51,26 @@ $(document).ready(function()
         });
             return false;
         */
+        var a = $('<a>',{
+        href:"#"
+        })
+        $('<img>',{
+            'class': 'poster',
+            attr:{
+                src:"./picture/poster/HanhDong/1.jpg"           
+            },
+            css:{
+                'width': '100px',
+                'height': '200px'
+            }
+        }).appendTo(a)
+        var p = $('<p>',{
+            'class': 'title',
+            text: "title"
+        })
+        var div = $('<div>')
+        $(a).appendTo(div);
+        $(p).appendTo(div);
+       $(div).appendTo(".film_hanhDong");
+        
 });

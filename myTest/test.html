@@ -11,17 +11,33 @@
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
     <script src="test.js"></script>
+    <style>
+        .film{
+            background-color: yellow;
+        }
+    </style>
 </head>
 
 <body>
-    <form class="form-horizontal" id="form_input">
-        <input type="text" name="user">
-        <button type="submit">Gửi</button>
-    </form>
-    <div id="content1"></div>
-    <div id="content2"></div>
-    <div id="content3"></div>
-    <div id="content4"></div>
+    <div class="film_hanhDong">
+        <p>Phim Hành Động</p>
+        <div class="film">
+            <a href="#"><img class="poster" id="action_1" src=""
+                    alt="poster_dibiet"></a>
+            <p class="tiltle" id="title_1">Dị Biệt 1</p>
+        </div>
+        <div class="film">
+            <a href="#"><img class="poster" id="action_1" src=""
+                    alt="poster_dibiet"></a>
+            <p class="tiltle" id="title_1">Dị Biệt 2</p>
+        </div>
+        <div class="film">
+            <a href="#"><img class="poster" data-id="" id="action_2" src=""
+                    alt="poster_haiphuong"></a>
+            <p class="tiltle" id="title_2">Hai Phượng</p>
+        </div>
+    </div>
+    
 </body>
 
 </html>

@@ -35,4 +35,13 @@ $(document).ready(function () {
             
         }
     });;
+
+    $('#HanhDong').click(function () { 
+        localStorage.setItem('genre_id',1)
+        window.location.href = "../html/form_filmHanhDong.html";
+    });
+    $('#KinhDi').click(function () { 
+        localStorage.setItem('genre_id',2)
+        window.location.href = "../html/form_filmHanhDong.html";
+    });
 });

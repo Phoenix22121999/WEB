@@ -6,23 +6,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cày Phim</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/main_course.css">
-    
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="../js/index.js"></script>
 </head>
+<style>
+
+    #bitnami-banner .bitnami-corner-image-div {
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        border: 0px;
+        z-index: 100001;
+        height: 110px;
+    }
+
+    #bitnami-banner .bitnami-corner-image-div .bitnami-corner-image {
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        border: 0px;
+        z-index: 100001;
+        height: 110px;
+    }
+
+    #bitnami-close-banner-button {
+        height: 12px;
+        width: 12px;
+        z-index: 10000000000;
+        position: fixed;
+        right: 5px;
+        bottom: 65px;
+        display: none;
+        cursor: pointer
+    }
+
+    .img {
+        background-color: #aaa;
+        margin-top: 20px;
+        font-size: 50px;
+        color: lightslategray;
+        display: flex;
+        /* Canh giữa bằng flex */
+        justify-content: center;
+        align-items: center;
+        margin-left: 20px;
+        float: left;
+        width: 250px !important;
+        height: 300px !important;
+        margin-bottom: 30px;
+
+    }
+
+    .clear {
+        background-color: darkorange;
+        width: 100%;
+        height: 10px;
+    }
+
+    .slide_show_decu {
+        margin-top: 50px;
+        background-color: #2E2E2E;
+        margin-bottom: 50px;
+        border: 5px solid #868A08;
+        border-radius: 10px;
+        box-shadow: 4px 8px 15px 2px rgba(0, 0, 0, 0.9);
+    }
+
+    .title {
+        color: #868A08;
+        font-size: 30px;
+    }
+
+    .navbar{
+        box-shadow: 4px 8px 15px 2px rgba(3, 0, 0, 0.9);
+    }
+</style>
 
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
     <div id="Heading_web">
-        <a href="/index.html"><img src="../picture/logo1.png" alt="my_logo" id="logo"></a>
+        <a class='logo' href="/index.html"><img src="../picture/logo1.png" alt="my_logo" id="logo"></a>
     </div>
+    <div class="clear"></div>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <!-- div_menu_Main -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -63,71 +139,94 @@
             </div>
         </div>
     </nav>
-    <div id="content">
-
+    <div class="container-fluid">
+        <div class="banner"></div>
     </div>
-    <div class="body_web">
+    <div class="container slide_show_decu">
+        <p class="title">Phim Đề Cử</p>
+        <div id="sildeShow" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#sildeShow" data-slide-to="0" class="active"></li>
+                <li data-target="#sildeShow" data-slide-to="1"></li>
+                <li data-target="#sildeShow" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="img">Film</div>
+                    <div class="img">Film</div>
+                    <div class="img">Film</div>
+                    <div class="img">Film</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img">Film</div>
+                    <div class="img">Film</div>
+                    <div class="img">Film</div>
+                    <div class="img">Film</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img">Film</div>
+                    <div class="img">Film</div>
+                    <div class="img">Film</div>
+                    <div class="img">Film</div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#sildeShow" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#sildeShow" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <div class="container body_web">
         <div class="film_hanhDong">
             <p>Phim Hành Động</p>
             <div>
-                <a href="#"><img class="poster" id="action_1" src=""
-                        alt="poster_dibiet"></a>
+                <a href="#"><img class="poster" id="action_1" src="" alt="poster_dibiet"></a>
                 <p class="tiltle" id="title_1">Dị Biệt</p>
             </div>
             <div>
-                <a href="#"><img class="poster" data-id="" id="action_2" src=""
-                        alt="poster_haiphuong"></a>
+                <a href="#"><img class="poster" id="action_2" src="" alt="poster_haiphuong"></a>
                 <p class="tiltle" id="title_2">Hai Phượng</p>
             </div>
             <div>
-                <a href="#"><img class="poster" data-id="" id="action_3" src=""
-                        alt="poster_quatimthep"></a>
+                <a href="#"><img class="poster" id="action_3" src="" alt="poster_quatimthep"></a>
                 <p class="tiltle" id="title_3">Quả Tim Thép</p>
             </div>
             <div>
-                <a href="#"><img class="poster" data-id="" id="action_4" src=""
-                        alt="poster_fast1"></a>
+                <a href="#"><img class="poster" id="action_4" src="" alt="poster_fast1"></a>
                 <p class="tiltle" id="title_4">Quá Nhanh Quá Nguy Hiểm 1</p>
             </div>
-            <div>
-                <a href="#"><img class="poster" data-id="" id="action_5" src=""
-                        alt="poster_fast2"></a>
-                <p class="tiltle" id="title_5">Quá Nhanh Quá Nguy Hiểm 2</p>
-            </div>
-            <a href="../html/form_filmHanhDong.html">Xem tất cả>></a>
+            <a href="#" style="float: right;"><br>Xem tất cả>></a>
         </div>
         <div class="film_KinhDi">
             <p>Phim Kinh Dị</p>
-            <div>
+            <div class="col-xs-6">
                 <a href="#"><img class="poster" src="../picture/poster/KinhDi/poster_47MetersDownUncaged.jpg"
                         alt="poster_47MetersDownUncaged"></a>
                 <p class="tiltle">Hung thần đại dương</p>
                 <p class="sub_tiltle">47 Meters Down Uncaged</p>
             </div>
-            <div>
+            <div class="col-xs-6">
                 <a href="#"><img class="poster" src="../picture/poster/KinhDi/poster_annabelle3.jpg"
                         alt="poster_AnnabelleComesHome"></a>
                 <p class="tiltle">Annabelle: Ác quỷ trở về</p>
                 <p class="sub_tiltle">Annabelle Comes Home </p>
             </div>
-            <div>
+            <div class="col-xs-6">
                 <a href="#"><img class="poster" src="../picture/poster/KinhDi/poster_Brightburn.jpg"
                         alt="poster_Brightburn"></a>
                 <p class="tiltle">Đứa con của bóng tối</p>
                 <p class="sub_tiltle">Brightburn</p>
             </div>
-            <div>
+            <div class="col-xs-6">
                 <a href="#"><img class="poster" src="../picture/poster/KinhDi/poster_Crawl.jpg" alt="poster_Crawl"></a>
                 <p class="tiltle">Địa đạo cá sấu tử thần</p>
                 <p class="sub_tiltle">Crawl</p>
             </div>
-            <div>
-                <a href="#"><img class="poster" src="../picture/poster/KinhDi/poster_DoctorSleep.jpg"
-                        alt="poster_DoctorSleep"></a>
-                <p class="tiltle">Ký ức kinh hoàng</p>
-                <p class="tiltle">Doctor Sleep</p>
-            </div>
-            <a href="../html/form_filmKinhDi.html">Xem tất cả>></a>
+            <a href="#" style="float: right;"><br>Xem tất cả>></a>
         </div>
         <div class="film_voThuat">
             <p>Phim Võ Thuật</p>
@@ -155,13 +254,7 @@
                 <p class="tiltle">Diệp Vấn 4</p>
                 <p class="sub_tiltle">IP MAN 4</p>
             </div>
-            <div>
-                <a href="#"><img class="poster" src="../picture/poster/VoThuat/poster_Caubekarate.jpg"
-                        alt="poster_Caubekarate"></a>
-                <p class="tiltle">Cậu Bé Karate</p>
-                <p class="sub_tiltle">The Karate Kid</p>
-            </div>
-            <a href="./form_filmVoThuat.html">Xem tất cả>></a>
+            <a href="#" style="float: right;"><br>Xem tất cả>></a>
 
         </div>
         <div class="film_thanThoai">
@@ -190,17 +283,14 @@
                 <p class="tiltle">Chúa Tể Của Những Chiếc Nhẫn: Hiệp hội nhẫn thần</p>
                 <p class="sub_tiltle">The Lord of the Rings:The Fellowship of the Ring</p>
             </div>
-            <div>
-                <a href="#"><img class="poster" src="../picture/poster/ThanThoai/poster_chuatecuanhungchiecnhan2.jpg"
-                        alt="poster_chuatecuanhungchiecnhan2"></a>
-                <p class="tiltle">Chúa Tể Của Những Chiếc Nhẫn 2: Hai tòa tháp</p>
-                <p class="sub_tiltle">The Lord of the Rings :The Two Towers</p>
-            </div>
-            <a href="./form_filmThanThoai.html">Xem tất cả>></a>
+            <a href="#" style="float: right;"><br>Xem tất cả>></a>
         </div>
     </div>
-
-    
+    <footer id="sticky-footer" class="container-fluid py-4 bg-dark text-white-50">
+        <div class="container text-center">
+            <small>Copyright @ Your Website 2017</small>
+        </div>
+    </footer>
 </body>
 
 </html>

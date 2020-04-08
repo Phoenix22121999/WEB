@@ -62,6 +62,7 @@
       background-color: white;
       height: 300px;
       width: 100%;
+      overflow: auto;
     }
 
     .navbar,
@@ -73,6 +74,11 @@
       background-color: darkorange;
       width: 100%;
       height: 10px;
+    }
+    .commentItem{
+      width: 100%;
+      height: auto;
+      background-color: yellow;
     }
   </style>
 
@@ -160,7 +166,14 @@
             <div class="titleBox">
               <label>Comment Box</label>
             </div>
-            <div class="commentBox"></div>
+            <div class="commentBox">
+              <div class="commentItem">
+                <p class="name">dat</p>
+                <p class="comment">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab iste incidunt perspiciatis natus nobis dolores porro nulla, voluptatem nihil impedit aliquid facilis odio labore saepe totam rem cumque, nostrum esse illo eveniet est asperiores accusamus distinctio! Ex, consequuntur magni temporibus veniam, dolor distinctio ad, totam at et quidem fugiat voluptatem!
+                </p>
+              </div>
+            </div>
             <div class="actionBox">
               <form class="form" role="form">
                 <textarea

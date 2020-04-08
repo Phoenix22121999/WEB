@@ -75,6 +75,11 @@
     box-shadow: 4px 8px 15px 2px rgba(0, 0, 0, 0.9);
   }
 
+  .img img {
+    width: 250px !important;
+    height: 300px !important;
+  }
+
   .title {
     color: #868a08;
     font-size: 30px;
@@ -87,11 +92,11 @@
 
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
 
   <div id="Heading_web">
     <a class="logo" href="/index.html"><img src="../picture/logo1.png" alt="my_logo" id="logo" /></a>
@@ -149,22 +154,22 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <div class="img">Film</div>
-          <div class="img">Film</div>
-          <div class="img">Film</div>
-          <div class="img">Film</div>
+          <div class="img"><img src="" alt=""></div>
+          <div class="img"><img src="" alt=""></div>
+          <div class="img"><img src="" alt=""></div>
+          <div class="img"><img src="" alt=""></div>
         </div>
         <div class="carousel-item">
-          <div class="img">Film</div>
-          <div class="img">Film</div>
-          <div class="img">Film</div>
-          <div class="img">Film</div>
+          <div class="img"><img src="" alt=""></div>
+          <div class="img"><img src="" alt=""></div>
+          <div class="img"><img src="" alt=""></div>
+          <div class="img"><img src="" alt=""></div>
         </div>
         <div class="carousel-item">
-          <div class="img">Film</div>
-          <div class="img">Film</div>
-          <div class="img">Film</div>
-          <div class="img">Film</div>
+          <div class="img"><img src="" alt=""></div>
+          <div class="img"><img src="" alt=""></div>
+          <div class="img"><img src="" alt=""></div>
+          <div class="img"><img src="" alt=""></div>
         </div>
       </div>
       <a class="carousel-control-prev" href="#sildeShow" role="button" data-slide="prev">
@@ -181,75 +186,78 @@
     <div class="film_hanhDong">
       <p>Phim Hành Động</p>
       <div>
-        <a href="#"><img class="poster" id="action_1" src="" alt="poster_dibiet" /></a>
+        <a href="#"><img class="poster" id="action_1" data-id="" src="" alt="poster_dibiet" /></a>
         <p class="tiltle" id="title_1">Dị Biệt</p>
       </div>
       <div>
-        <a href="#"><img class="poster" id="action_2" src="" alt="poster_haiphuong" /></a>
+        <a href="#"><img class="poster" id="action_2" data-id=" " src="" alt="poster_haiphuong" /></a>
         <p class="tiltle" id="title_2">Hai Phượng</p>
       </div>
       <div>
-        <a href="#"><img class="poster" id="action_3" src="" alt="poster_quatimthep" /></a>
+        <a href="#"><img class="poster" id="action_3" data-id=" " src="" alt="poster_quatimthep" /></a>
         <p class="tiltle" id="title_3">Quả Tim Thép</p>
       </div>
       <div>
-        <a href="#"><img class="poster" id="action_4" src="" alt="poster_fast1" /></a>
+        <a href="#"><img class="poster" id="action_4" data-id=" " src="" alt="poster_fast1" /></a>
         <p class="tiltle" id="title_4">Quá Nhanh Quá Nguy Hiểm 1</p>
       </div>
-      <a href="#" style="float: right;"><br />Xem tất cả>></a>
+
+      <a href="#" style="float: right;" id="HanhDong"><br />Xem tất cả>></a>
+
     </div>
     <div class="film_KinhDi">
       <p>Phim Kinh Dị</p>
       <div class="col-xs-6">
-        <a href="#"><img class="poster" src="../picture/poster/KinhDi/poster_47MetersDownUncaged.jpg"
+        <a href="#"><img class="poster" src="" data-id=""
             alt="poster_47MetersDownUncaged" /></a>
 
         <p class="tiltle">Hung thần đại dương</p>
         <p class="sub_tiltle">47 Meters Down Uncaged</p>
       </div>
       <div class="col-xs-6">
-        <a href="#"><img class="poster" src="../picture/poster/KinhDi/poster_annabelle3.jpg"
+        <a href="#"><img class="poster" src="" data-id=""
             alt="poster_AnnabelleComesHome" /></a>
 
         <p class="tiltle">Annabelle: Ác quỷ trở về</p>
         <p class="sub_tiltle">Annabelle Comes Home</p>
       </div>
       <div class="col-xs-6">
-        <a href="#"><img class="poster" src="../picture/poster/KinhDi/poster_Brightburn.jpg"
+        <a href="#"><img class="poster" src="../picture/poster/KinhDi/poster_Brightburn.jpg" data-id=""
             alt="poster_Brightburn" /></a>
 
         <p class="tiltle">Đứa con của bóng tối</p>
         <p class="sub_tiltle">Brightburn</p>
       </div>
       <div class="col-xs-6">
-        <a href="#"><img class="poster" src="../picture/poster/KinhDi/poster_Crawl.jpg" alt="poster_Crawl" /></a>
+        <a href="#"><img class="poster" src="../picture/poster/KinhDi/poster_Crawl.jpg" data-id="" alt="poster_Crawl" /></a>
         <p class="tiltle">Địa đạo cá sấu tử thần</p>
         <p class="sub_tiltle">Crawl</p>
       </div>
-      <a href="#" style="float: right;"><br />Xem tất cả>></a>
+
+      <a href="#" style="float: right;" id="KinhDi"><br />Xem tất cả>></a>
     </div>
     <div class="film_voThuat">
       <p>Phim Võ Thuật</p>
       <div>
-        <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman.jpg" alt="poster_ipman" /></a>
+        <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman.jpg" alt="poster_ipman" data-id=""/></a>
 
         <p class="tiltle">Diệp Vấn</p>
         <p class="sub_tiltle">IP MAN</p>
       </div>
       <div>
-        <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman2.jpg" alt="poster_ipman2" /></a>
+        <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman2.jpg" alt="poster_ipman2" data-id=""/></a>
 
         <p class="tiltle">Diệp Vấn 2</p>
         <p class="sub_tiltle">IP MAN 2</p>
       </div>
       <div>
-        <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman3.jpg" alt="poster_ipman3" /></a>
+        <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman3.jpg" alt="poster_ipman3" data-id=""/></a>
 
         <p class="tiltle">Diệp Vấn 3</p>
         <p class="sub_tiltle">IP MAN 3</p>
       </div>
       <div>
-        <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman4.jpg" alt="poster_ipman4" /></a>
+        <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman4.jpg" alt="poster_ipman4" data-id=""/></a>
 
         <p class="tiltle">Diệp Vấn 4</p>
         <p class="sub_tiltle">IP MAN 4</p>
@@ -259,28 +267,28 @@
     <div class="film_thanThoai">
       <p>Phim Thần Thoại</p>
       <div>
-        <a href="#"><img class="poster" src="../picture/poster/ThanThoai/poster_300chienbinh.jpg"
+        <a href="#"><img class="poster" src="../picture/poster/ThanThoai/poster_300chienbinh.jpg" data-id=""
             alt="poster_300chienbinh" /></a>
 
         <p class="tiltle">300 Chiến Binh</p>
         <p class="sub_tiltle">300</p>
       </div>
       <div>
-        <a href="#"><img class="poster" src="../picture/poster/ThanThoai/poster_cacvithanaicap.jpg"
+        <a href="#"><img class="poster" src="../picture/poster/ThanThoai/poster_cacvithanaicap.jpg" data-id=""
             alt="poster_cacvithanaicap" /></a>
 
         <p class="tiltle">Các vị thần ai cập</p>
         <p class="sub_tiltle">Gods of Egypt</p>
       </div>
       <div>
-        <a href="#"><img class="poster" src="../picture/poster/ThanThoai/poster_chienbinhbattu.jpg"
+        <a href="#"><img class="poster" src="../picture/poster/ThanThoai/poster_chienbinhbattu.jpg" data-id=""
             alt="poster_chienbinhbattu" /></a>
 
         <p class="tiltle">Chiến Binh Bất Tử</p>
         <p class="sub_tiltle">Immortals</p>
       </div>
       <div>
-        <a href="#"><img class="poster" src="../picture/poster/ThanThoai/poster_chuatecuanhungchiecnhan1.jpg"
+        <a href="#"><img class="poster" src="../picture/poster/ThanThoai/poster_chuatecuanhungchiecnhan1.jpg" data-id=""
             alt="poster_chuatecuanhungchiecnhan1" /></a>
 
         <p class="tiltle">Chúa Tể Của Những Chiếc Nhẫn: Hiệp hội nhẫn thần</p>
@@ -293,7 +301,7 @@
   </div>
   <footer id="sticky-footer" class="container-fluid py-4 bg-dark text-white-50">
     <div class="container text-center">
-      <small>Copyright @ Your Website 2017</small>
+      <small>Copyright @ Cay Phim 2020</small>
     </div>
   </footer>
 </body>

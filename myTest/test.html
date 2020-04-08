@@ -5,39 +5,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="test.js"></script>
     <style>
-        .film{
-            background-color: yellow;
+        #bitnami-banner .bitnami-corner-image-div {
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+            border: 0px;
+            z-index: 100001;
+            height: 110px;
+        }
+
+        #bitnami-banner .bitnami-corner-image-div .bitnami-corner-image {
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+            border: 0px;
+            z-index: 100001;
+            height: 110px;
+        }
+
+        #bitnami-close-banner-button {
+            height: 12px;
+            width: 12px;
+            z-index: 10000000000;
+            position: fixed;
+            right: 5px;
+            bottom: 65px;
+            display: none;
+            cursor: pointer;
+        }
+
+        .img {
+            background-color: #aaa;
+            margin-top: 20px;
+            font-size: 50px;
+            color: lightslategray;
+            display: flex;
+            /* Canh giữa bằng flex */
+            justify-content: center;
+            align-items: center;
+            margin-left: 20px;
+            float: left;
+            width: 250px !important;
+            height: 300px !important;
+            margin-bottom: 30px;
+        }
+
+        .img img {
+            width: 250px !important;
+            height: 300px !important;
+        }
+
+        .clear {
+            background-color: darkorange;
+            width: 100%;
+            height: 10px;
+        }
+
+        .slide_show_decu {
+            margin-top: 50px;
+            background-color: #2e2e2e;
+            margin-bottom: 50px;
+            border: 5px solid #868a08;
+            border-radius: 10px;
+            box-shadow: 4px 8px 15px 2px rgba(0, 0, 0, 0.9);
         }
     </style>
 </head>
 
 <body>
-    <div class="film_hanhDong">
-        <p>Phim Hành Động</p>
-        <div class="film">
-            <a href="#"><img class="poster" id="action_1" src=""
-                    alt="poster_dibiet"></a>
-            <p class="tiltle" id="title_1">Dị Biệt 1</p>
-        </div>
-        <div class="film">
-            <a href="#"><img class="poster" id="action_1" src=""
-                    alt="poster_dibiet"></a>
-            <p class="tiltle" id="title_1">Dị Biệt 2</p>
-        </div>
-        <div class="film">
-            <a href="#"><img class="poster" data-id="" id="action_2" src=""
-                    alt="poster_haiphuong"></a>
-            <p class="tiltle" id="title_2">Hai Phượng</p>
+    <div class="container slide_show_decu">
+        <p class="title">Phim Đề Cử</p>
+        <div id="sildeShow" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#sildeShow" data-slide-to="0" class="active"></li>
+                <li data-target="#sildeShow" data-slide-to="1"></li>
+                <li data-target="#sildeShow" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="img"><img src="" alt=""></div>
+                    <div class="img"><img src="" alt=""></div>
+                    <div class="img"><img src="" alt=""></div>
+                    <div class="img"><img src="" alt=""></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img"><img src="" alt=""></div>
+                    <div class="img"><img src="" alt=""></div>
+                    <div class="img"><img src="" alt=""></div>
+                    <div class="img"><img src="" alt=""></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img"><img src="" alt=""></div>
+                    <div class="img"><img src="" alt=""></div>
+                    <div class="img"><img src="" alt=""></div>
+                    <div class="img"><img src="" alt=""></div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#sildeShow" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#sildeShow" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
     </div>
-    
+
 </body>
 
 </html>

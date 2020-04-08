@@ -18,20 +18,20 @@ $(document).ready(function () {
                 var a = $('<a>',{
                     href:"#"
                     })
-                    $('<img>',{
-                        'class': 'poster',
-                        attr:{
-                            src: tmp_link       
-                        },
-                    }).appendTo(a)
-                    var p = $('<p>',{
-                        'class': 'title',
-                        text: obj[tmp_str].title
-                    })
-                    var div = $('<div>')
-                    $(a).appendTo(div);
-                    $(p).appendTo(div);
-                    $(div).appendTo(".body_web");
+                $('<img>',{
+                    'class': 'poster',
+                    attr:{
+                        src: tmp_link       
+                    },
+                }).appendTo(a)
+                var p = $('<p>',{
+                    'class': 'title',
+                    text: obj[tmp_str].title
+                })
+                var div = $('<div>')
+                $(a).appendTo(div);
+                $(p).appendTo(div);
+                $(div).appendTo(".body_web");
                 
             }
         }

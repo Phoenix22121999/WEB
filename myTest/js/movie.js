@@ -13,6 +13,33 @@ $(document).ready(function () {
         }
     });
 
+    $.ajax({
+        type: "post",
+        url: "../php/getComment.php",
+        data: {
+            'id': getCookie('id')
+        },
+        success: function (response) {
+            var obj = JSON.parse(response)
+            for(let i =1; i <= Object.keys(obj).length; i++){
+                var name = $('<p>',{
+                    'class': 'name',
+                    text: obj[i].username
+                })
+                var comment = $('<p>',{
+                    'class': 'comment',
+                    text: obj[i].comment
+                })
+                var item=$('<div>',{
+                    'class': 'commentItem'
+                })
+                $(name).appendTo(item);
+                $(comment).appendTo(item);
+                $(item).appendTo(".commentBox");
+            }
+            
+        }
+    });
     
     function getCookie(cname) {
         var name = cname + "=";

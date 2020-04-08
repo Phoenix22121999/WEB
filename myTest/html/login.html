@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+            background-color: #131419;
+        }
+
+        form {
+            width: 500px;
+            margin: auto;
+            margin-bottom: 10%;
+            margin-top: 10%;
+
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+
+        .btn_signin {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .form_login {
+            border: 1px solid;
+            width: 70%;
+            height: 70%;
+            margin-top: 10%;
+            box-shadow: 4px 8px 15px 2px rgba(0, 0, 0, 0.9);
+            color: white;
+        }
+
+        .form_login h2 {
+            text-align: center !important;
+        }
+        .sign_up{
+            float: right;
+            color: white;
+        }
+    </style>
+    <div class="container">
+        <div class="container form_login">
+            <form onsubmit="return function_login()">
+                <h2>Đăng Nhập</h2>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <p id="mess_email"></p>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input onmouseover="mouse_password" type="password" class="form-control" id="pwd"
+                        placeholder="Enter password" name="pwd">
+                    <p id="mess_password"></p>
+                </div>
+                <a class="sign_up" href="#">Sign Up</a>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+                <button type="submit" class="btn btn-default btn-success btn_signin">Sign In</button>
+            </form>
+            
+        </div>
+
+    </div>
+    <script>
+        function function_login() {
+            var email = document.getElementById('email');
+            var password = document.getElementById('pwd');
+            if (email.value == "") {
+                document.getElementById("mess_email").innerHTML = "Please Enter Your Email";
+                document.getElementById("mess_email").style.color = "red";
+                email.focus();
+                return false;
+            }
+            else if (password.value == "" && (email.value !== "")) {
+                document.getElementById("mess_password").innerHTML = "Please Enter Your Password";
+                document.getElementById("mess_password").style.color = "red";
+                document.getElementById("mess_email").innerHTML = "";
+                password.focus();
+                return false;
+            }
+            else if (password.value.length <= 6) {
+                document.getElementById("mess_password").style.color = "red";
+                document.getElementById("mess_password").innerHTML = "Your password must be 6 character";
+                password.focus();
+                return false;
+            } else {
+                return True;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -75,6 +75,7 @@ div.body_web div {
 .film_voThuat a,
 .film_thanThoai a {
     text-decoration: none;
+    display: inline;
 }
 
 p.tiltle,

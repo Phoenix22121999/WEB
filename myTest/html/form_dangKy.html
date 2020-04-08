@@ -2,34 +2,93 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FORM DANG KY</title>
-    <link rel="stylesheet" type="text/css" href="/myTest/css/web_test.css">
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <div id="form_dangky">
-        <p>Họ Và Tên</p>
-        <input type="text" id="ho_ten">
-        <br>
-        <p>Ngày Sinh</p>
-        <input type="text" id="birth_day">
-        <br>
-        <p>Tên Tài Khoản</p>
-        <input type="text" id="user_name">
-        <br>
-        <p>Mật Khẩu</p>
-        <input type="password" id="pass_word">
-        <br>
-        <p>Nhập Lại Mật Khẩu</p>
-        <input type="password" id="re_pass_word">
-        <br>
-        <br>
-        <input type="button" id="button_dangky" value="Đăng Ký">
+
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+            background-color: #131419;
+        }
+
+        form {
+            width: 500px;
+            margin: auto;
+            margin-bottom: 10%;
+            margin-top: 10%;
+
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+
+        .btn_signin {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .form_login {
+            border: 1px solid;
+            width: 70%;
+            height: 70%;
+            margin-top: 10%;
+            box-shadow: 4px 8px 15px 2px rgba(0, 0, 0, 0.9);
+            color: white;
+        }
+
+        .form_login h2 {
+            text-align: center !important;
+        }
+
+        .sign_up {
+            float: right;
+            color: white;
+        }
+    </style>
+    <div class="container">
+        <div class="container form_login">
+            <form>
+                <h2>Đăng Ký</h2>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <p id="mess_email" required></p>
+                </div>
+                <div class="form-group">
+                    <label for="username">User Name:</label>
+                    <input type="text" class="form-control" id="text" placeholder="Enter User Name"
+                        pattern="[a-z]{1,15}" name="username" required>
+                    <p id="mess_username"></p>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input onmouseover="mouse_password" type="password" class="form-control" id="pwd"
+                        placeholder="Enter password" name="pwd" required>
+                    <p id="mess_password"></p>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Re-Password:</label>
+                    <input onmouseover="mouse_password" type="re_password" class="form-control" id="re_pwd"
+                        placeholder="Enter Re-Password" name="pwd" required>
+                    <p id="mess_Re_password"></p>
+                </div>
+                <input type="checkbox" checked="checked" name="remember"> Tôi đồng ý với các điều khoản
+                <button type="submit" class="btn btn-default btn-success btn_signin">Sign Up</button>
+            </form>
+
+        </div>
+
     </div>
-    <script language="javascript" src="/myTest/js/web_test.js"></script>
 </body>
 
 </html>

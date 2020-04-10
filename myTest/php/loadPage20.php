@@ -30,3 +30,4 @@ if ($result) {
 }
 $data_json = json_encode($data);
 echo $data_json;
+$conn->close();

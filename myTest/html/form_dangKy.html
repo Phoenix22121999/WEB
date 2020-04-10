@@ -57,29 +57,29 @@
     </style>
     <div class="container">
         <div class="container form_login">
-            <form>
+            <form action="../php/register.php" method="POST">
                 <h2>Đăng Ký</h2>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" autocomplete="off">
                     <p id="mess_email" required></p>
                 </div>
                 <div class="form-group">
                     <label for="username">User Name:</label>
-                    <input type="text" class="form-control" id="text" placeholder="Enter User Name"
+                    <input type="text" class="form-control" id="text" placeholder="Enter User Name" autocomplete="off"
                         pattern="[a-z]{1,15}" name="username" required>
                     <p id="mess_username"></p>
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input onmouseover="mouse_password" type="password" class="form-control" id="pwd"
+                    <input onmouseover="mouse_password" type="password" class="form-control" id="pwd" autocomplete="off"
                         placeholder="Enter password" name="pwd" required>
                     <p id="mess_password"></p>
                 </div>
                 <div class="form-group">
                     <label for="pwd">Re-Password:</label>
-                    <input onmouseover="mouse_password" type="re_password" class="form-control" id="re_pwd"
-                        placeholder="Enter Re-Password" name="pwd" required>
+                    <input onmouseover="mouse_password" type="re_password" class="form-control" id="pwd" autocomplete="off"
+                        placeholder="Enter Re-Password" name="re_pwd" required>
                     <p id="mess_Re_password"></p>
                 </div>
                 <input type="checkbox" checked="checked" name="remember"> Tôi đồng ý với các điều khoản

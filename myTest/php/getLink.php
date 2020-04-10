@@ -18,3 +18,4 @@ if ($result) {
     echo $data_json;
     //mysqli_free_result($result);
 }
+$conn->close();

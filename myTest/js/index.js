@@ -53,18 +53,17 @@ $(document).ready(function () {
         }
     });;
 
-    $('#HanhDong').click(function () {
+    $('.HanhDongMovie').click(function () {
         localStorage.setItem('genre_id', 1)
         window.location.href = "../html/form_filmHanhDong.html";
     });
-    $('#KinhDi').click(function () {
+    $('.KinhDiMovie').click(function () {
         localStorage.setItem('genre_id', 2)
         window.location.href = "../html/form_filmHanhDong.html";
     });
     $('.poster').click(function () {
         
         let id = $(this).data('id');
-        localStorage.setItem('genre_id', 2) 
         setCookie('id',id)
         window.location.href = "./Template.html";
     });

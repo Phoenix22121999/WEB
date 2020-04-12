@@ -12,7 +12,7 @@ if ($result) {
     $i = 1;
     while ($row = mysqli_fetch_row($result)) {
         $data{
-        $i} = array('username' => $row[0], 'comment' => $row[1]);
+            $i} = array('username' => $row[0], 'comment' => $row[1]);
         //echo $target_dir . "-" .$row[1]. "-" 
         $i++;
     }
@@ -20,3 +20,4 @@ if ($result) {
     echo $data_json;
     //mysqli_free_result($result);
 }
+$conn->close();

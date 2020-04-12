@@ -12,9 +12,14 @@ $(document).ready(function () {
             var obj = JSON.parse(response);
             console.log(obj)
             var l = Object.keys(obj).length;
+            if(localStorage.getItem('genre_id')==1){
+                var genre="HanhDong"
+            }else if(localStorage.getItem('genre_id')==2){
+                var genre="KinhDi"
+            }
             for (let i = 1; i <= l; i++) {
                 var tmp_str = 'movie_'+i;
-                var tmp_link = '../'+obj[tmp_str].link;
+                var tmp_link = '../picture/poster/'+genre+"/"+obj[tmp_str].link;
                 var a = $('<a>',{
                     href:"#"
                     })

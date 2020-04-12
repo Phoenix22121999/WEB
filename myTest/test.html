@@ -20,36 +20,27 @@
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="test.js"></script>  
     <style>
-        img.poster {
-            width: 200px !important;
-            height: 300px !important;
-        } 
-        .body_web{
-            max-width: 100%;
-            margin: auto;
-            padding: auto;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-        }
-        .movie { 
-            height: 400px;
-            width: 250px;
-            max-height: 400px;
-            text-align: center;
-            padding: auto;
-            text-align: center;
-        }
+       
         
     </style>
 </head>
 
-<body>
-    <div class="body_web">
-
-    </div>
-
+<body>    
+        <h2>Đăng Nhập</h2>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" >
+            <p id="mess_email"></p>
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd"
+                placeholder="Enter password" name="pwd" >
+            <p id="mess_password"></p>
+        </div>
+        <a class="sign_up" href="#">Forgot Password</a>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+        <button type="submit" class="btn btn-default btn-success btn_signin" id="btn_submit">Sign In</button>
 </body>
 
 </html>

@@ -11,16 +11,21 @@ if (isset($_POST['pwd']) && isset($_POST['email'])) {
         // Hàm `mysql_fetch_row()` sẽ chỉ fetch dữ liệu một record mỗi lần được gọi
         // do đó cần sử dụng vòng lặp While để lặp qua toàn bộ dữ liệu trên bảng posts
         $row = mysqli_fetch_row($result);
-        if ($row[2] == $pwd) {
-            $isLogin = true;
-            echo 'Thanh Công';
-            setcookie('email', $email, time() + (86400 * 30), "/");
-            setcookie('username', $row[1], time() + (86400 * 30), "/");
-            setcookie('isLogin', $isLogin, time() + (86400 * 30), "/");
-            setcookie('role', $row[4], time() + (86400 * 30), "/");
-            header('Location: ../html/index.html');
-        } else if ($row[2] != $pwd) {
-            echo 'Fail';
+        if ($row) {
+
+            if ($row[2] == $pwd) {
+                echo '1';
+                $isLogin = true;
+                setcookie('email', $email, time() + (86400 * 30), "/");
+                setcookie('username', $row[1], time() + (86400 * 30), "/");
+                setcookie('isLogin', $isLogin, time() + (86400 * 30), "/");
+                setcookie('role', $row[4], time() + (86400 * 30), "/");
+            } else
+                echo 'Sai Mật Khẩu';
+        } else {
+            echo "Sai Email";
         }
     }
+} else {
+    echo 'Chưa Điền Đầy Đủ Thông Tin';
 }

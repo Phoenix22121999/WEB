@@ -92,51 +92,67 @@ $(document).ready(function () {
     //     }
     // });;
 
-    
-
-    
-        console.log(localStorage.getItem('genre_id'))
+    $('#btn_submit').click(function () { 
+        
         $.ajax({
             type: "post",
-            url: "./php/loadPage20.php",
+            url: "./php/login.php",
             data: {
-                'genre': localStorage.getItem('genre_id')
+                email : $('#email').val(),
+                pwd : $('#pwd').val(),
             },
             success: function (response) {
-                var obj = JSON.parse(response);
-                console.log(obj)
-                var l = Object.keys(obj).length;
-                if(localStorage.getItem('genre_id')==1){
-                    var genre="HanhDong"
-                }else if(localStorage.getItem('genre_id')==2){
-                    var genre="KinhDi"
-                }
-                for (let i = 1; i <= l; i++) {
-                    var tmp_str = 'movie_'+i;
-                    var tmp_link = './picture/poster/'+genre+"/"+obj[tmp_str].link;
-                    var a = $('<a>',{
-                        href:"#"
-                        })
-                    $('<img>',{
-                        'class': 'poster',
-                        attr:{
-                            src: tmp_link       
-                        },
-                    }).appendTo(a)
-                    var p = $('<p>',{
-                        'class': 'title',
-                        text: obj[tmp_str].title
-                    })
-                    var div = $('<div>',{
-                        'class': 'movie'
-                    })
-                    $(a).appendTo(div);
-                    $(p).appendTo(div);
-                    $(div).appendTo(".body_web");
-                    
-                }
+                // if (response == '1') {
+                //     console.log('dat')
+                // }else
+                alert(response)
             }
-        })
+        });
+    });
+
+    
+        // console.log(localStorage.getItem('genre_id'))
+        // $.ajax({
+        //     type: "post",
+        //     url: "./php/loadPage20.php",
+        //     data: {
+        //         'genre': localStorage.getItem('genre_id')
+        //     },
+        //     success: function (response) {
+        //         var obj = JSON.parse(response);
+        //         console.log(obj)
+        //         var l = Object.keys(obj).length;
+        //         if(localStorage.getItem('genre_id')==1){
+        //             var genre="HanhDong"
+        //         }else if(localStorage.getItem('genre_id')==2){
+        //             var genre="KinhDi"
+        //         }
+        //         for (let i = 1; i <= l; i++) {
+        //             var tmp_str = 'movie_'+i;
+        //             var tmp_link = './picture/poster/'+genre+"/"+obj[tmp_str].link;
+        //             var a = $('<a>',{
+        //                 href:"#"
+        //                 })
+        //             $('<img>',{
+        //                 'class': 'poster',
+        //                 attr:{
+        //                     src: tmp_link       
+        //                 },
+        //             }).appendTo(a)
+        //             var p = $('<p>',{
+        //                 'class': 'title',
+        //                 text: obj[tmp_str].title
+        //             })
+        //             var div = $('<div>',{
+        //                 'class': 'movie'
+        //             })
+        //             $(a).appendTo(div);
+        //             $(p).appendTo(div);
+        //             $(div).appendTo(".body_web");
+                    
+        //         }
+        //     }
+        // })
     
         
         /*var a = $('<a>',{

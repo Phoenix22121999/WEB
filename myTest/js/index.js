@@ -4,7 +4,7 @@ $(document).ready(function () {
         url: "../php/loadPage.php",
         success: function (response) {
             var obj = JSON.parse(response);
-            console.log(obj)
+            //console.log(obj)
             for (let i = 1; i <= Object.keys(obj.HanhDong).length; i++) {
                 var tmp_str = 'movie_' + i;
 
@@ -37,16 +37,17 @@ $(document).ready(function () {
         url: "../php/loadPage12.php",
         success: function (response) {
             var obj = JSON.parse(response);
-            //console.log(obj)
+            console.log(obj)
             let count = 0;
             for (let i = 1; i <= 3; i++) {
                 for (let z = 1; z <= 4; z++) {
                     count++;
                     if (count <= Object.keys(obj).length) {
                         var tmp_str = 'movie_' + count;
-                        $('.carousel-inner .carousel-item:nth-child(' + i + ') .img:nth-child(' + z + ') img ').attr(
-                            'src', '../' + obj[tmp_str].link
-                        );
+                        $('.carousel-inner .carousel-item:nth-child(' + i + ') .img:nth-child(' + z + ') img ').attr({
+                            'src': '../' + obj[tmp_str].link,
+                            'data-id' : obj[tmp_str].id
+                        });
                     }
                 }
             }
@@ -67,7 +68,12 @@ $(document).ready(function () {
         setCookie('id',id)
         window.location.href = "./Template.html";
     });
-
+    $('.poster_sub').click(function () {
+        
+        let id = $(this).data('id');
+        setCookie('id',id)
+        window.location.replace("./Template.html")
+    });
     function setCookie(cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -100,7 +106,28 @@ $(document).ready(function () {
         }
     }
 
-    function gotoLogin() {
-        window.open('../html/login.html')
+    if (getCookie('isLogin')==1) {
+       
+        $('#btn_logout').css('display', 'block');
+        $('#btn_login').css('display', 'none');
     }
+    if (getCookie('isLogin')==0) {
+        $('#btn_logout').css('display', 'none');
+        $('#btn_login').css('display', 'block');
+    }
+    if (getCookie('role')==1) {
+        $('#btn_admin').css('display', 'block');
+    }
+    $('#btn_logout').click(function () { 
+        $('#btn_logout').css('display', 'none');
+        $('#btn_login').css('display', 'block');
+        $('#btn_admin').css('display', 'none');
+        $.ajax({
+            type: "post",
+            url: "../php/logout.php",
+            success: function (response) {
+                
+            }
+        });
+    });
 });

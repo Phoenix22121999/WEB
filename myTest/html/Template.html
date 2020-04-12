@@ -83,8 +83,17 @@
     background-color: #6e6e6e;
     float: left;
   }
-
-  .text {
+  .poster_img{
+    width: 100%;
+    height: 250px;
+  }
+  .text_main {
+    width: 95%;
+    height: 250px;
+    background-color: #6e6e6e;
+    margin-left: 50px;
+  }
+  .text_sub{
     width: 95%;
     height: 250px;
     background-color: #6e6e6e;
@@ -117,6 +126,16 @@
     }
     .detailBox{
       padding: 15px 15px 15px 15px;
+    }
+    .poster_sub{
+      width: 200px;
+      height: 250px;
+      background-color: #6e6e6e;
+      float: left;
+    }
+    .poster_sub img{
+      width: 200px;
+      height: 250px;
     }
 </style>
 
@@ -173,10 +192,14 @@
         <div class="dis">
           <div class="row">
             <div class="col-2">
-              <div class="poster">poster</div>
+              <div class="poster">
+                <img class="poster_img" src="" alt="">
+              </div>
             </div>
             <div class="col-10">
-              <div class="text">Text</div>
+              <div class="text_main">
+
+              </div>
             </div>
           </div>
         </div>
@@ -215,13 +238,46 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <div class="img_dis">900 X 350</div>
+              <div class="row">
+                <div class="col-2">
+                  <div class="poster_sub">
+                    <img id="poster_img_1" src="" alt="">
+                  </div>
+                </div>
+                <div class="col-10">
+                  <div id="text_sub_1" class="text_sub">
+
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="carousel-item">
-              <div class="img_dis">900 X 350</div>
+              <div class="row">
+                <div class="col-2">
+                  <div class="poster_sub">
+                    <img id="poster_img_2" src="" alt="">
+                  </div>
+                </div>
+                <div class="col-10">
+                  <div id="text_sub_2" class="text_sub">
+
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="carousel-item">
-              <div class="img_dis">900 X 350</div>
+              <div class="row">
+                <div class="col-2">
+                  <div class="poster_sub">
+                    <img id="poster_img_3" src="" alt="">
+                  </div>
+                </div>
+                <div class="col-10">
+                  <div id="text_sub_3" class="text_sub">
+
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <a class="carousel-control-prev" href="#sildeShow" role="button" data-slide="prev">

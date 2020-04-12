@@ -15,7 +15,9 @@ if (isset($_POST['pwd']) && isset($_POST['email'])) {
             $isLogin = true;
             echo 'Thanh Công';
             setcookie('email', $email, time() + (86400 * 30), "/");
+            setcookie('username', $row[1], time() + (86400 * 30), "/");
             setcookie('isLogin', $isLogin, time() + (86400 * 30), "/");
+            setcookie('role', $row[4], time() + (86400 * 30), "/");
             header('Location: ../html/index.html');
         } else if ($row[2] != $pwd) {
             echo 'Fail';

@@ -59,6 +59,7 @@
     height: 300px !important;
     margin-bottom: 30px;
   }
+  
 
   .clear {
     background-color: darkorange;
@@ -88,8 +89,25 @@
   .navbar {
     box-shadow: 4px 8px 15px 2px rgba(3, 0, 0, 0.9);
   }
+  .name_user{
+    color: black;
+    padding-top: 5px;
+  }
 </style>
-
+<script>
+  function checkHidden(){
+    document.getElementById('btn_logout').style.display = "block";
+    document.getElementById('btn_admin').style.display = "block";
+    document.getElementById('name_user').style.display = "block";
+    document.getElementById('btn_login').style.display = "none";
+  }
+  function checkHidden2(){
+    document.getElementById('btn_logout').style.display = "none";
+    document.getElementById('btn_admin').style.display = "none";
+    document.getElementById('name_user').style.display = "none";
+    document.getElementById('btn_login').style.display = "block";
+  }
+</script>
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
@@ -98,8 +116,15 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
   </script>
 
-  <div id="Heading_web">
+  <div class="Heading_web">
     <a class="logo" href="/index.html"><img src="../picture/logo1.png" alt="my_logo" id="logo" /></a>
+    <div class="btn_group">
+      <button type="button" id="btn_signup" class="btn_signup btn btn-success">Sign Up</button>
+      <button type="button" id="btn_login" class="btn_login btn btn-success" onclick="checkHidden()">Login</button>
+      <button type="button" id="btn_logout" class="btn_logout btn btn-success" onclick="checkHidden2()"style="display: none;">Logout</button>
+      <button type="button" id="btn_admin" class="btn_admin btn btn-success" style="display: none;">ADMIN</button>
+      <a href="#" id="name_user" class="name_user" style="display:none;">Tên User</a>
+    </div>
   </div>
   <div class="clear"></div>
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">

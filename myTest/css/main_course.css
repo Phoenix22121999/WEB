@@ -13,8 +13,28 @@ body {
     background-color: gray;
 }
 
-#Heading_web {
+.Heading_web {
     display: inline;
+}
+.btn_group{
+    float: right;
+}
+.btn_logout, 
+.btn_login, 
+.btn_signup,
+.btn_admin,
+.name_user{
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    position: relative;
+}
+#btn_logout, 
+#btn_login, 
+#btn_signup,
+#btn_admin{
+    position: relative;
+    width: 100px;
 }
 
 /*định đạng menu chính dấu ">" có nghĩa chỉ lấy thẻ li ngay phía sau nó*/

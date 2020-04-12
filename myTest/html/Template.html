@@ -1,195 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <script src="../js/movie.js"></script>
-    <title>Document</title>
-  </head>
-  <style>
-    body {
-      background-color: #6e6e6e;
-    }
 
-    .img {
-      background-color: #444d56;
-      margin-top: 20px;
-      font-size: 50px;
-      color: lightslategray;
-      display: flex;
-      /* Canh giữa bằng flex */
-      justify-content: center;
-      align-items: center;
-      height: 600px;
-      width: 1000px;
-      margin-bottom: 30px;
-    }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
-    body {
-      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-      background-color: #2f4353;
-      background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
-    }
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="../js/movie.js"></script>
+  <title>Document</title>
+</head>
+<style>
+  body {
+    background-color: #6e6e6e;
+  }
 
-    .container-fluid {
-      height: 100%;
-      margin-top: 20px;
-    }
+  .img {
+    background-color: #444d56;
+    margin-top: 20px;
+    font-size: 50px;
+    color: lightslategray;
+    display: flex;
+    /* Canh giữa bằng flex */
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 1000px;
+    margin-bottom: 30px;
+  }
 
-    .commentBox {
-      background-color: white;
-      height: 300px;
-      width: 100%;
-      overflow: auto;
-    }
+  body {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    background-color: #2f4353;
+    background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
+  }
 
-    .navbar,
-    .img {
-      box-shadow: 4px 8px 15px 2px rgba(3, 0, 0, 0.9);
-    }
+  .container-fluid {
+    height: 100%;
+    margin-top: 20px;
+  }
 
-    .clear {
-      background-color: darkorange;
-      width: 100%;
-      height: 10px;
+  .commentBox {
+    background-color: white;
+    height: 300px;
+    width: 100%;
+    overflow: auto;
+    margin-bottom: 10px;
+  }
+
+  .navbar,
+  .img {
+    box-shadow: 4px 8px 15px 2px rgba(3, 0, 0, 0.9);
+  }
+
+  .clear {
+    background-color: darkorange;
+    width: 100%;
+    height: 10px;
+  }
+
+  .dis {
+    width: 100%;
+    height: 300px;
+    background-color: #2f4353;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .poster {
+    width: 200px;
+    height: 250px;
+    background-color: #6e6e6e;
+    float: left;
+  }
+
+  .text {
+    width: 95%;
+    height: 250px;
+    background-color: #6e6e6e;
+    margin-left: 50px;
+  }
+  .img_dis{
+        background-color: #aaa;
+        margin-top: 20px;
+        font-size: 50px;
+        color: lightslategray;
+        display: flex;
+        /* Canh giữa bằng flex */
+        justify-content: center;
+        align-items: center;
+        height: 450px;
+        margin-bottom: 30px;
     }
     .commentItem{
-      width: 100%;
-      height: auto;
-      background-color: yellow;
+      border: 1px solid;
+      width: 98%;
+      padding-left: 1px;
+      margin-top: 1%;
+      margin-left: 1%;
     }
-  </style>
+    .name{
+      border-bottom: 1px solid;
+      background-color:#aaa ;
+      font-size: 16px;
+      
+    }
+    .detailBox{
+      padding: 15px 15px 15px 15px;
+    }
+</style>
 
-  <body>
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+<body>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
-    <div id="Heading_web">
-      <a href="index.html"
-        ><img src="../picture/logo1.png" alt="my_logo" id="logo"
-      /></a>
-    </div>
-    <div class="clear"></div>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <!-- div_menu_Main -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#collapsibleNavbar"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div
-        class="collapse navbar-collapse justify-content-between"
-        id="collapsibleNavbar"
-      >
-        <div class="navbar-nav">
-          <div class="nav-item dropdown">
-            <a
-              class="navitem nav-link dropdown-toggle"
-              id="navbardrop"
-              data-toggle="dropdown"
-              href="#"
-              >Thể Loại</a
-            >
-            <div class="dropdown-menu">
-              <!-- menu_type_film -->
-              <a class="dropdown-item" href="#">Hành Động</a>
-              <a class="dropdown-item" href="#">Kinh Dị</a>
-              <a class="dropdown-item" href="#">Võ Thuật</a>
-              <a class="dropdown-item" href="#">Thần Thoại</a>
-            </div>
+  <div id="Heading_web">
+    <a href="index.html"><img src="../picture/logo1.png" alt="my_logo" id="logo" /></a>
+  </div>
+  <div class="clear"></div>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- div_menu_Main -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
+      <div class="navbar-nav">
+        <div class="nav-item dropdown">
+          <a class="navitem nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" href="#">Thể Loại</a>
+          <div class="dropdown-menu">
+            <!-- menu_type_film -->
+            <a class="dropdown-item" href="#">Hành Động</a>
+            <a class="dropdown-item" href="#">Kinh Dị</a>
+            <a class="dropdown-item" href="#">Võ Thuật</a>
+            <a class="dropdown-item" href="#">Thần Thoại</a>
           </div>
-          <div class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              id="navbardrop"
-              data-toggle="dropdown"
-              href="#"
-              >Quốc Gia</a
-            >
-            <div class="dropdown-menu">
-              <!-- menu_type_film -->
-              <a class="dropdown-item" href="#">Mỹ</a>
-              <a class="dropdown-item" href="#">Hàn Quốc</a>
-              <a class="dropdown-item" href="#">Trung Quốc</a>
-              <a class="dropdown-item" href="#">Thái Lan</a>
-            </div>
+        </div>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" href="#">Quốc Gia</a>
+          <div class="dropdown-menu">
+            <!-- menu_type_film -->
+            <a class="dropdown-item" href="#">Mỹ</a>
+            <a class="dropdown-item" href="#">Hàn Quốc</a>
+            <a class="dropdown-item" href="#">Trung Quốc</a>
+            <a class="dropdown-item" href="#">Thái Lan</a>
           </div>
-          <a class="nav-item nav-link" href="#">Phim Bộ</a>
-          <a class="nav-item nav-link" href="#">Phim Sắp Chiếu</a>
-          <a class="nav-item nav-link" href="#">Hoạt Hình</a>
         </div>
-        <div class="navbar-nav">
-          <form class="form-inline">
-            <input
-              class="form-control mr-sm-2"
-              type="text"
-              placeholder="Search"
-            />
-            <button class="btn btn-success" type="submit">Search</button>
-          </form>
-        </div>
+        <a class="nav-item nav-link" href="#">Phim Bộ</a>
+        <a class="nav-item nav-link" href="#">Phim Sắp Chiếu</a>
+        <a class="nav-item nav-link" href="#">Hoạt Hình</a>
       </div>
-    </nav>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm"></div>
-        <div class="col-sm-8 col-xl-10">
-          <div class="img">
-            <iframe
-              width="959" height="539" src="" rameborder="0"allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="detailBox">
-            <div class="titleBox">
-              <label>Comment Box</label>
-            </div>
-            <div class="commentBox">
-              <div class="commentItem">
-                <p class="name">dat</p>
-                <p class="comment">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab iste incidunt perspiciatis natus nobis dolores porro nulla, voluptatem nihil impedit aliquid facilis odio labore saepe totam rem cumque, nostrum esse illo eveniet est asperiores accusamus distinctio! Ex, consequuntur magni temporibus veniam, dolor distinctio ad, totam at et quidem fugiat voluptatem!
-                </p>
-              </div>
-            </div>
-            <div class="actionBox">
-              <form class="form" role="form">
-                <textarea
-                  class="autoExpand forumPost form-control" rows="4" data-min-rows="4" placeholder="Enter your message here"></textarea>
-                <button class="forumPostButton btn btn-success">Post</button>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm"></div>
+      <div class="navbar-nav">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" />
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
       </div>
     </div>
-    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
-      <div class="container text-center">
-        <small>Footer</small>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm"></div>
+      <div class="col-sm-8 col-xl-10">
+        <div class="dis">
+          <div class="row">
+            <div class="col-2">
+              <div class="poster">poster</div>
+            </div>
+            <div class="col-10">
+              <div class="text">Text</div>
+            </div>
+          </div>
+        </div>
+        <div class="container img">
+          <iframe width="959" height="539" src="" rameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="detailBox">
+          <div class="titleBox">
+            <label>Comment Box</label>
+          </div>
+          <div class="commentBox">
+            <div class="commentItem">
+              <p class="name">dat</p>
+              <p class="comment">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab iste incidunt perspiciatis natus nobis
+                dolores porro nulla, voluptatem nihil impedit aliquid facilis odio labore saepe totam rem cumque,
+                nostrum esse illo eveniet est asperiores accusamus distinctio! Ex, consequuntur magni temporibus veniam,
+                dolor distinctio ad, totam at et quidem fugiat voluptatem!
+              </p>
+            </div>
+          </div>
+          <div class="actionBox">
+            <form class="form" role="form">
+              <textarea class="autoExpand forumPost form-control" rows="4" data-min-rows="4"
+                placeholder="Enter your message here" style="margin-bottom: 10px;"></textarea>
+              <button class="forumPostButton btn btn-success">Post</button>
+            </form>
+          </div>
+        </div>
+        <div id="sildeShow" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#sildeShow" data-slide-to="0" class="active"></li>
+            <li data-target="#sildeShow" data-slide-to="1"></li>
+            <li data-target="#sildeShow" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="img_dis">900 X 350</div>
+            </div>
+            <div class="carousel-item">
+              <div class="img_dis">900 X 350</div>
+            </div>
+            <div class="carousel-item">
+              <div class="img_dis">900 X 350</div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#sildeShow" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#sildeShow" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
       </div>
-    </footer>
-  </body>
+      <div class="col-sm"></div>
+    </div>
+  </div>
+  <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Footer</small>
+    </div>
+  </footer>
+</body>
+
 </html>

@@ -99,4 +99,8 @@ $(document).ready(function () {
             }
         }
     }
+
+    function gotoLogin() {
+        window.open('../html/login.html')
+    }
 });

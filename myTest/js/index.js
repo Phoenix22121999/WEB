@@ -132,4 +132,25 @@ $(document).ready(function () {
             }
         });
     });
+    
+    $('.name_user').on('click',function(){
+        document.getElementById('screen_2').style.display = "block";
+        $('#id_user').val(getCookie('user_id'));
+        $('#email').val(decodeURIComponent(getCookie('email')));
+        $('#text').val(getCookie('username'));
+    });
+    $('#save_button').on('click',function(){
+        if(($('#email').val()!=decodeURIComponent(getCookie('email'))) || ($('#text').val()!=getCookie('username'))||($('#pwd_new').val()!="")){
+            $.ajax({
+                type: "post",
+                url: "../php/update.php",
+                data: {
+                    
+                },
+                success: function (response) {
+                    
+                }
+            });
+        }
+    });
 });

@@ -169,11 +169,7 @@
   /**/
 </style>
 <script>
-  $(document).ready(function() {
-    $('.name_user').on('click',function(){
-      document.getElementById('screen_2').style.display = "block";
-    });
-  });
+  
 </script>
 
 <body>
@@ -284,7 +280,7 @@
             <span onclick="document.getElementById('screen_2').style.display='none'" class="close"
               title="Close form">&times;</span>
             <label for="id_user">ID:</label>
-            <input type="text" class="form-control" id="id_user" name="id_user" autocomplete="off" required>
+            <input type="text" class="form-control" id="id_user" name="id_user" autocomplete="off" readonly>
           </div>
           <div class="form-group">
             <label for="email">Email:</label>
@@ -296,10 +292,14 @@
               required>
           </div>
           <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd" autocomplete="off" name="pwd" required>
+            <label for="pwd">Current Password:</label>
+            <input type="password" class="form-control" id="pwd" autocomplete="off" name="pwd" >
           </div>
-          <button type="submit" style="width: 100%;" class="btn btn-default btn-success btn-save">Save</button>
+          <div class="form-group">
+            <label for="pwd">New Password:</label>
+            <input type="password" class="form-control" id="pwd_new" autocomplete="off" name="pwd_new" >
+          </div>
+          <button type="button" style="width: 100%;" class="btn btn-default btn-success btn-save" id="save_button">Save</button>
         </form>
       </div>
     </div>

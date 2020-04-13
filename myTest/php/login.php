@@ -2,7 +2,7 @@
 require_once('conn.php');
 if (isset($_POST['pwd']) && isset($_POST['email'])) {
     $pwd = $_POST['pwd'];
-    $email = $_POST['email'];
+    $email = $_POST["email"];
     $sql  =  "SELECT *
             FROM user
             WHERE email = '$email' ";
@@ -16,7 +16,7 @@ if (isset($_POST['pwd']) && isset($_POST['email'])) {
             if ($row[2] == $pwd) {
                 echo '1';
                 $isLogin = true;
-                setcookie('email', $email, time() + (86400 * 30), "/");
+                setcookie('email', urldecode($email), time() + (86400 * 30), "/");
                 setcookie('username', $row[1], time() + (86400 * 30), "/");
                 setcookie('isLogin', $isLogin, time() + (86400 * 30), "/");
                 setcookie('user_id', $row[0], time() + (86400 * 30), "/");

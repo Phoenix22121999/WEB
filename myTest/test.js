@@ -71,26 +71,111 @@ $(document).ready(function () {
     //     $(a).appendTo(div);
     //     $(p).appendTo(div);
     //    $(div).appendTo(".film_hanhDong");
-    $.ajax({
-        type: "Post",
-        url: "./php/loadPage12.php",
-        success: function (response) {
-            var obj = JSON.parse(response);
-            console.log(obj)
-            let count = 0;
-            for (let i = 1; i <= 3; i++) {
-                for (let z = 1; z <= 4; z++) {
-                    count++;
-                    if (count <= Object.keys(obj).length) {
-                        var tmp_str = 'movie_' + count;
-                        $('.carousel-inner .carousel-item:nth-child(' + i + ') .img:nth-child(' + z + ') img ').attr(
-                            'src', './' + obj[tmp_str].link
-                        );
-                    }
-                }
+    // $.ajax({
+    //     type: "Post",
+    //     url: "./php/loadPage12.php",
+    //     success: function (response) {
+    //         var obj = JSON.parse(response);
+    //         console.log(obj)
+    //         let count = 0;
+    //         for (let i = 1; i <= 3; i++) {
+    //             for (let z = 1; z <= 4; z++) {
+    //                 count++;
+    //                 if (count <= Object.keys(obj).length) {
+    //                     var tmp_str = 'movie_' + count;
+    //                     $('.carousel-inner .carousel-item:nth-child(' + i + ') .img:nth-child(' + z + ') img ').attr(
+    //                         'src', './' + obj[tmp_str].link
+    //                     );
+    //                 }
+    //             }
+    //         }
+    //     }
+    // });;
+
+    $('#btn_submit').click(function () { 
+        
+        $.ajax({
+            type: "post",
+            url: "./php/login.php",
+            data: {
+                email : $('#email').val(),
+                pwd : $('#pwd').val(),
+            },
+            success: function (response) {
+                // if (response == '1') {
+                //     console.log('dat')
+                // }else
+                alert(response)
             }
-        }
-    });;
+        });
+    });
 
-
+    
+        // console.log(localStorage.getItem('genre_id'))
+        // $.ajax({
+        //     type: "post",
+        //     url: "./php/loadPage20.php",
+        //     data: {
+        //         'genre': localStorage.getItem('genre_id')
+        //     },
+        //     success: function (response) {
+        //         var obj = JSON.parse(response);
+        //         console.log(obj)
+        //         var l = Object.keys(obj).length;
+        //         if(localStorage.getItem('genre_id')==1){
+        //             var genre="HanhDong"
+        //         }else if(localStorage.getItem('genre_id')==2){
+        //             var genre="KinhDi"
+        //         }
+        //         for (let i = 1; i <= l; i++) {
+        //             var tmp_str = 'movie_'+i;
+        //             var tmp_link = './picture/poster/'+genre+"/"+obj[tmp_str].link;
+        //             var a = $('<a>',{
+        //                 href:"#"
+        //                 })
+        //             $('<img>',{
+        //                 'class': 'poster',
+        //                 attr:{
+        //                     src: tmp_link       
+        //                 },
+        //             }).appendTo(a)
+        //             var p = $('<p>',{
+        //                 'class': 'title',
+        //                 text: obj[tmp_str].title
+        //             })
+        //             var div = $('<div>',{
+        //                 'class': 'movie'
+        //             })
+        //             $(a).appendTo(div);
+        //             $(p).appendTo(div);
+        //             $(div).appendTo(".body_web");
+                    
+        //         }
+        //     }
+        // })
+    
+        
+        /*var a = $('<a>',{
+            href:"#"
+            })
+            $('<img>',{
+                'class': 'poster',
+                attr:{
+                    src:"./picture/poster/HanhDong/1.jpg"           
+                },
+                css:{
+                    'width': '100px',
+                    'height': '200px'
+                }
+            }).appendTo(a)
+            var p = $('<p>',{
+                'class': 'title',
+                text: "title"
+            })
+            var div = $('<div>')
+            $(a).appendTo(div);
+            $(p).appendTo(div);
+            $(div).appendTo(".body_web");
+            console.log("dat")*/
+    
 });

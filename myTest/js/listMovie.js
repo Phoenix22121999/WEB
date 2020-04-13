@@ -33,7 +33,9 @@ $(document).ready(function () {
                     'class': 'title',
                     text: obj[tmp_str].title
                 })
-                var div = $('<div>')
+                var div = $('<div>',{
+                    'class': 'movie'
+                })
                 $(a).appendTo(div);
                 $(p).appendTo(div);
                 $(div).appendTo(".body_web");

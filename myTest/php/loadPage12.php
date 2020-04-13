@@ -22,7 +22,7 @@ if ($result) {
             $target_dir = "picture/poster/KinhDi/" . $row[0] . ".jpg";
         }
         $data{
-            'movie_' . $i} = array('link' => $target_dir, 'title' => $row[1]);
+            'movie_' . $i} = array('id' => $row[0], 'link' => $target_dir, 'title' => $row[1]);
         //echo $target_dir . "-" .$row[1]. "-" ;
         $i++;
     }

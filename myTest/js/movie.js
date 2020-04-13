@@ -5,11 +5,29 @@ $(document).ready(function () {
         type: "post",
         url: "../php/getLink.php",
         data: {
-            'id': getCookie('id')
+            'id': getCookie('id'),
+            'genre':localStorage.getItem('genre_id')
         },
         success: function (response) {
             var obj = JSON.parse(response)
-            $('iframe').attr('src', obj.link);
+            console.log(obj)
+            $('iframe').attr('src', obj['main'].link);
+            $('.text_main').html(obj['main'].description);
+            if(localStorage.getItem('genre_id')==1){
+                var genre="HanhDong"
+            }else if(localStorage.getItem('genre_id')==2){
+                var genre="KinhDi"
+            }
+            $('.poster .poster_img').attr('src','../picture/poster/'+genre+"/"+ getCookie('id') +".jpg" );
+            for (let i = 1; i < Object.keys(obj).length; i++) {
+                var tmp_str = 'movie_'+i;
+                var tmp_ptr = '#text_sub_'+i;
+                var tmp_txt = '.poster_sub #poster_img_'+i;
+                
+                $(tmp_ptr).html(obj[tmp_str].description);
+                $(tmp_txt).attr('src','../picture/poster/'+genre+"/"+ obj[tmp_str].id +".jpg" );
+                
+            }
         }
     });
 

@@ -31,33 +31,37 @@ $(document).ready(function () {
         }
     });
 
-    $.ajax({
-        type: "post",
-        url: "../php/getComment.php",
-        data: {
-            'id': getCookie('id')
-        },
-        success: function (response) {
-            var obj = JSON.parse(response)
-            for(let i =1; i <= Object.keys(obj).length; i++){
-                var name = $('<p>',{
-                    'class': 'name',
-                    text: obj[i].username
-                })
-                var comment = $('<p>',{
-                    'class': 'comment',
-                    text: obj[i].comment
-                })
-                var item=$('<div>',{
-                    'class': 'commentItem'
-                })
-                $(name).appendTo(item);
-                $(comment).appendTo(item);
-                $(item).appendTo(".commentBox");
+    function getComment() {
+        $.ajax({
+            type: "post",
+            url: "../php/getComment.php",
+            data: {
+                'id': getCookie('id')
+            },
+            success: function (response) {
+                var obj = JSON.parse(response)
+                for(let i =1; i <= Object.keys(obj).length; i++){
+                    var name = $('<p>',{
+                        'class': 'name',
+                        text: obj[i].username
+                    })
+                    var comment = $('<p>',{
+                        'class': 'comment',
+                        text: obj[i].comment
+                    })
+                    var item=$('<div>',{
+                        'class': 'commentItem'
+                    })
+                    $(name).appendTo(item);
+                    $(comment).appendTo(item);
+                    $(item).appendTo(".commentBox");
+                }
+                
             }
-            
-        }
-    });
+        });
+    }
+    getComment()
+    
     
     function getCookie(cname) {
         var name = cname + "=";
@@ -73,4 +77,25 @@ $(document).ready(function () {
         }
         return "";
     } 
+
+    $('#btn').click(function () { 
+        
+        if(getCookie('isLogin')==1 && $('#comment').val() !=""){
+            $.ajax({
+                type: "post",
+                url: "../php/setComment.php",
+                data: {
+                    user_id : getCookie('user_id'),
+                    comment : $('#comment').val(),
+                    movie_id:  getCookie('id')
+                },
+                success: function (response) {            
+                    if(response==1){
+                        getComment()
+                        $('#comment').val(" ")
+                    }
+                }
+            });
+        }
+    });
 });

@@ -15,6 +15,7 @@
   <script src="../js/index.js"></script>
 </head>
 <style>
+   /*
   #bitnami-banner .bitnami-corner-image-div {
     position: fixed;
     right: 0px;
@@ -42,7 +43,7 @@
     bottom: 65px;
     display: none;
     cursor: pointer;
-  }
+  }*/
 
   .img {
     background-color: #aaa;
@@ -59,7 +60,7 @@
     height: 300px !important;
     margin-bottom: 30px;
   }
-  
+
 
   .clear {
     background-color: darkorange;
@@ -89,42 +90,124 @@
   .navbar {
     box-shadow: 4px 8px 15px 2px rgba(3, 0, 0, 0.9);
   }
-  .name_user{
+
+  .name_user {
     color: black;
     padding-top: 5px;
   }
+
+  .screen_2 {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+
+  }
+  /*còn ờ */
+  .form_info {
+    background-color: white;
+    box-shadow: 4px 8px 15px 2px rgba(3, 0, 0, 0.9);
+    padding: 10px;
+    border-radius: 0px 0px 15px 15px;
+    animation-name: moveDown;
+    animation-duration: 1s;
+    width: 85%;
+  }
+  /*Phần đầu của form lấy thông tin của người dùng nó sẽ là màu xanh và bo công 2 đầu là trên trái và trên phải*/
+  .heading_form_info {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #0174DF;
+    margin-top: 100px;
+    border-radius: 15px 15px 0px 0px;
+    text-align: center;
+    animation-name: moveDown;
+    animation-duration: 1s;
+    width: 85%;
+  }
+
+  /*khi trở chuột vào hoặc nhấn vào thì class close sẽ thành màu đỏ và chuột sẽ thành con trỏ*/
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+
+
+  /*khi ở 0% form sẽ được nằm ở vị trí theo trục y ở -100
+    khi load ở 80% thì form sẽ nằm ở vị trí là 20px
+    Khi load được 100% thì form sẽ nằm ở vị trí được đặt trong html
+  
+  */
+  @keyframes moveDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    80% {
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+  /*border-radius: (trên-trái) (trên-phải) (dưới-phải) (dưới trái)*/
+  /**/
+  /**/
+  /**/
+  /**/
+  /**/
+  /**/
 </style>
 <script>
-  function checkHidden(){
+
+  function checkHidden() {
     document.getElementById('btn_logout').style.display = "block";
     document.getElementById('btn_admin').style.display = "block";
     document.getElementById('name_user').style.display = "block";
     document.getElementById('btn_login').style.display = "none";
   }
-  function checkHidden2(){
+  function checkHidden2() {
     document.getElementById('btn_logout').style.display = "none";
     document.getElementById('btn_admin').style.display = "none";
     document.getElementById('name_user').style.display = "none";
     document.getElementById('btn_login').style.display = "block";
   }
+  $(document).ready(function () {
+    $('.name_user').on('click', function () {
+      document.getElementById('screen_2').style.display = "block";
+    });
+  });
 </script>
+
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-  </script>
-
-  <div class="Heading_web">
-    <a class="logo" href="/index.html"><img src="../picture/logo1.png" alt="my_logo" id="logo" /></a>
+    </script>
+  <div>
     <div class="btn_group">
       <button type="button" id="btn_signup" class="btn_signup btn btn-success">Sign Up</button>
       <button type="button" id="btn_login" class="btn_login btn btn-success" onclick="checkHidden()">Login</button>
-      <button type="button" id="btn_logout" class="btn_logout btn btn-success" onclick="checkHidden2()"style="display: none;">Logout</button>
+      <button type="button" id="btn_logout" class="btn_logout btn btn-success" onclick="checkHidden2()"
+        style="display: none;">Logout</button>
       <button type="button" id="btn_admin" class="btn_admin btn btn-success" style="display: none;">ADMIN</button>
       <a href="#" id="name_user" class="name_user" style="display:none;">Tên User</a>
     </div>
+  </div>
+  <div class="Heading_web">
+    <a class="logo" href="/index.html"><img src="../picture/logo1.png" alt="my_logo" id="logo" /></a>
   </div>
   <div class="clear"></div>
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -138,7 +221,7 @@
           <a class="navitem nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" href="#">Thể Loại</a>
           <div class="dropdown-menu">
             <!-- menu_type_film -->
-            <a class="dropdown-item HanhDongMovie" href="#" >Hành Động</a>
+            <a class="dropdown-item HanhDongMovie" href="#">Hành Động</a>
             <a class="dropdown-item KinhDiMovie" href="#">Kinh Dị</a>
             <a class="dropdown-item" href="#">Võ Thuật</a>
             <a class="dropdown-item" href="#">Thần Thoại</a>
@@ -166,9 +249,6 @@
       </div>
     </div>
   </nav>
-  <div class="container-fluid">
-    <div class="banner"></div>
-  </div>
   <div class="container slide_show_decu">
     <p class="title">Phim Đề Cử</p>
     <div id="sildeShow" class="carousel slide" data-ride="carousel">
@@ -198,13 +278,42 @@
         </div>
       </div>
       <a class="carousel-control-prev" href="#sildeShow" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="carousel-control-prev-icon" aria-hidden="false"></span>
         <span class="sr-only">Previous</span>
       </a>
       <a class="carousel-control-next" href="#sildeShow" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="carousel-control-next-icon" aria-hidden="false"></span>
         <span class="sr-only">Next</span>
       </a>
+    </div>
+  </div>
+  <div class="screen_2" id="screen_2">
+    <div class="container">
+      <div class="container">
+        <div class="heading_form_info">Thông Tin Người dùng</div>
+        <form class="form_info" method="POST">
+          <div class="form-group">
+            <span onclick="document.getElementById('screen_2').style.display='none'" class="close"
+              title="Close form">&times;</span>
+            <label for="id_user">ID:</label>
+            <input type="text" class="form-control" id="id_user" name="id_user" autocomplete="off" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" autocomplete="off" required>
+          </div>
+          <div class="form-group">
+            <label for="username">User Name:</label>
+            <input type="text" class="form-control" id="text" autocomplete="off" pattern="[a-z]{1,15}" name="username"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" autocomplete="off" name="pwd" required>
+          </div>
+          <button type="submit" style="width: 100%;" class="btn btn-default btn-success btn-save">Save</button>
+        </form>
+      </div>
     </div>
   </div>
   <div class="container body_web">
@@ -233,15 +342,13 @@
     <div class="film_KinhDi">
       <p>Phim Kinh Dị</p>
       <div class="col-xs-6">
-        <a href="#"><img class="poster" src="" data-id=""
-            alt="poster_47MetersDownUncaged" /></a>
+        <a href="#"><img class="poster" src="" data-id="" alt="poster_47MetersDownUncaged" /></a>
 
         <p class="tiltle">Hung thần đại dương</p>
         <p class="sub_tiltle">47 Meters Down Uncaged</p>
       </div>
       <div class="col-xs-6">
-        <a href="#"><img class="poster" src="" data-id=""
-            alt="poster_AnnabelleComesHome" /></a>
+        <a href="#"><img class="poster" src="" data-id="" alt="poster_AnnabelleComesHome" /></a>
 
         <p class="tiltle">Annabelle: Ác quỷ trở về</p>
         <p class="sub_tiltle">Annabelle Comes Home</p>
@@ -254,7 +361,8 @@
         <p class="sub_tiltle">Brightburn</p>
       </div>
       <div class="col-xs-6">
-        <a href="#"><img class="poster" src="../picture/poster/KinhDi/poster_Crawl.jpg" data-id="" alt="poster_Crawl" /></a>
+        <a href="#"><img class="poster" src="../picture/poster/KinhDi/poster_Crawl.jpg" data-id=""
+            alt="poster_Crawl" /></a>
         <p class="tiltle">Địa đạo cá sấu tử thần</p>
         <p class="sub_tiltle">Crawl</p>
       </div>
@@ -264,25 +372,29 @@
     <div class="film_voThuat">
       <p>Phim Võ Thuật</p>
       <div>
-        <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman.jpg" alt="poster_ipman" data-id=""/></a>
+        <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman.jpg" alt="poster_ipman"
+            data-id="" /></a>
 
         <p class="tiltle">Diệp Vấn</p>
         <p class="sub_tiltle">IP MAN</p>
       </div>
       <div>
-        <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman2.jpg" alt="poster_ipman2" data-id=""/></a>
+        <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman2.jpg" alt="poster_ipman2"
+            data-id="" /></a>
 
         <p class="tiltle">Diệp Vấn 2</p>
         <p class="sub_tiltle">IP MAN 2</p>
       </div>
       <div>
-        <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman3.jpg" alt="poster_ipman3" data-id=""/></a>
+        <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman3.jpg" alt="poster_ipman3"
+            data-id="" /></a>
 
         <p class="tiltle">Diệp Vấn 3</p>
         <p class="sub_tiltle">IP MAN 3</p>
       </div>
       <div>
-        <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman4.jpg" alt="poster_ipman4" data-id=""/></a>
+        <a href="#"><img class="poster" src="../picture/poster/HanhDong/poster_ipman4.jpg" alt="poster_ipman4"
+            data-id="" /></a>
 
         <p class="tiltle">Diệp Vấn 4</p>
         <p class="sub_tiltle">IP MAN 4</p>

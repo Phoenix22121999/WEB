@@ -110,6 +110,8 @@ $(document).ready(function () {
        
         $('#btn_logout').css('display', 'block');
         $('#btn_login').css('display', 'none');
+        $('#name_user').css('display', 'block');
+        $('#name_user').html(getCookie('username'));
     }
     if (getCookie('isLogin')==0) {
         $('#btn_logout').css('display', 'none');

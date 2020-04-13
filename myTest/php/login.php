@@ -19,6 +19,7 @@ if (isset($_POST['pwd']) && isset($_POST['email'])) {
                 setcookie('email', $email, time() + (86400 * 30), "/");
                 setcookie('username', $row[1], time() + (86400 * 30), "/");
                 setcookie('isLogin', $isLogin, time() + (86400 * 30), "/");
+                setcookie('user_id', $row[0], time() + (86400 * 30), "/");
                 setcookie('role', $row[4], time() + (86400 * 30), "/");
             } else
                 echo 'Sai Mật Khẩu';

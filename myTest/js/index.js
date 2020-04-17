@@ -116,6 +116,7 @@ $(document).ready(function () {
     if (getCookie('isLogin')==0) {
         $('#btn_logout').css('display', 'none');
         $('#btn_login').css('display', 'block');
+        $('#name_user').css('display', 'none');
     }
     if (getCookie('role')==1) {
         $('#btn_admin').css('display', 'block');
@@ -145,10 +146,13 @@ $(document).ready(function () {
                 type: "post",
                 url: "../php/update.php",
                 data: {
-                    
+                    'user_id':getCookie('user_id'),
+                    'email':$('#email').val(),
+                    'username': $('#text').val(),
+                    'pwd_new': $('#pwd_new').val()
                 },
                 success: function (response) {
-                    
+                    alert(response)
                 }
             });
         }

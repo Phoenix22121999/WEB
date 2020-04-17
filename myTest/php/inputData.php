@@ -27,14 +27,14 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-if ($genre=='HanhDong') {
-    $genre_id= 1;
-}elseif($genre=='KinhDi'){
-    $genre_id= 2;
-}elseif($genre=='VoThuat'){
-    $genre_id= 3;
-}elseif($genre=='ThanThoai'){
-    $genre_id= 4;
+if ($genre == 'HanhDong') {
+    $genre_id = 1;
+} elseif ($genre == 'KinhDi') {
+    $genre_id = 2;
+} elseif ($genre == 'VoThuat') {
+    $genre_id = 3;
+} elseif ($genre == 'ThanThoai') {
+    $genre_id = 4;
 }
 $sql_1  =  "INSERT INTO movies (title, description, runtime, release_date, rating, link) VALUES ('$title', '$description', $time, '$mysqldate', $rate,'$link')";
 $sql_2  =  "SELECT movies.movie_id 
@@ -60,7 +60,7 @@ if ($result) {
     } else {
         echo "Error: " . $sql_3 . "<br>" . $conn->error;
     }
-    $target_dir = "picture/poster/".$genre."/";
+    $target_dir = "../picture/poster/" . $genre . "/";
     $arr = explode(".", $_FILES["fileUpload"]["name"]);
     $target_file = $target_dir . $row[0] . "." . end($arr);
     if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"], $target_file)) {

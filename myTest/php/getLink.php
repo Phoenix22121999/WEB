@@ -21,7 +21,7 @@ if ($result) {
 }
 $sql_2 = "SELECT movies.movie_id ,movies.description
         FROM movies,movie_genre 
-        WHERE movies.movie_id = movie_genre.movie_id AND movie_genre.genre_id = 1  AND movies.movie_id != $id
+        WHERE movies.movie_id = movie_genre.movie_id AND movie_genre.genre_id = $genre  AND movies.movie_id != $id
         ORDER BY movie_id DESC 
         LIMIT 3;";
 $result = mysqli_query($conn, $sql_2);

@@ -1,10 +1,12 @@
 <?php
+$search = $_POST['search'];
+
 require_once('conn.php');
+
 $sql = "SELECT movies.movie_id, movies.title ,movie_genre.genre_id
-FROM movies,movie_genre 
-WHERE movies.movie_id = movie_genre.movie_id 
-ORDER BY movie_id DESC 
-LIMIT 12;";
+    FROM movies,movie_genre
+    WHERE movies.title LIKE '%$search%' AND movies.movie_id = movie_genre.movie_id
+    ORDER BY movie_id DESC ";
 $result = mysqli_query($conn, $sql);
 $data = array();
 $data_tmp = array();
@@ -15,18 +17,7 @@ if ($result) {
     //echo "d";
     $i = 1;
     while ($row = mysqli_fetch_row($result)) {
-        if ($row[2] == '1') {
-            $target_dir = "picture/poster/HanhDong/" . $row[0] . ".jpg";
-        }
-        if ($row[2] == '2') {
-            $target_dir = "picture/poster/KinhDi/" . $row[0] . ".jpg";
-        }
-        if ($row[2] == '3') {
-            $target_dir = "picture/poster/VoThuat/" . $row[0] . ".jpg";
-        }
-        if ($row[2] == '4') {
-            $target_dir = "picture/poster/ThanThoai/" . $row[0] . ".jpg";
-        }
+        $target_dir =  $row[0] . ".jpg";
         $data{
             'movie_' . $i} = array('id' => $row[0], 'link' => $target_dir, 'title' => $row[1], "genre" => $row[2]);
         //echo $target_dir . "-" .$row[1]. "-" ;

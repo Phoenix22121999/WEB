@@ -7,7 +7,7 @@
     echo $data['genre'];*/
 require('conn.php');
 //echo "kết nối thành công";
-$sql = "SELECT movies.movie_id, movies.title 
+$sql = "SELECT movies.movie_id, movies.title ,movie_genre.genre_id
             FROM movies,movie_genre 
             WHERE movies.movie_id = movie_genre.movie_id AND movie_genre.genre_id = 1
             ORDER BY movie_id DESC 
@@ -24,7 +24,7 @@ if ($result) {
     while ($row = mysqli_fetch_row($result)) {
         $target_dir = "picture/poster/HanhDong/" . $row[0] . ".jpg";
         $data_tmp{
-            'movie_' . $i} = array('id' => $row[0], 'link' => $target_dir, 'title' => $row[1]);
+            'movie_' . $i} = array('id' => $row[0], 'link' => $target_dir, 'title' => $row[1], "genre" =>  $row[2]);
         //echo $target_dir . "-" .$row[1]. "-" ;
         $i++;
     }
@@ -33,7 +33,7 @@ if ($result) {
     //echo $data_json;
     //mysqli_free_result($result);
 }
-$sql = "SELECT movies.movie_id, movies.title 
+$sql = "SELECT movies.movie_id, movies.title ,movie_genre.genre_id
     FROM movies,movie_genre 
     WHERE movies.movie_id = movie_genre.movie_id AND movie_genre.genre_id = 2
     ORDER BY movie_id DESC 
@@ -49,7 +49,7 @@ if ($result) {
     while ($row = mysqli_fetch_row($result)) {
         $target_dir = "picture/poster/KinhDi/" . $row[0] . ".jpg";
         $data_tmp{
-            'movie_' . $i} = array('id' => $row[0], 'link' => $target_dir, 'title' => $row[1]);
+            'movie_' . $i} = array('id' => $row[0], 'link' => $target_dir, 'title' => $row[1], "genre" =>  $row[2]);
         //echo $target_dir . "-" .$row[1]. "-" ;
         $i++;
     }

@@ -16,7 +16,12 @@ $(document).ready(function () {
                 var genre = "HanhDong";
             } else if (localStorage.getItem("genre_id") == 2) {
                 var genre = "KinhDi";
+            } else if (localStorage.getItem("genre_id") == 3) {
+                var genre = "VoThuat";
+            } else if (localStorage.getItem("genre_id") == 4) {
+                var genre = "ThanThoai";
             }
+            console.log(genre);
             $(".poster .poster_img").attr(
                 "src",
                 "../picture/poster/" + genre + "/" + getCookie("id") + ".jpg"
@@ -116,5 +121,12 @@ $(document).ready(function () {
         } else {
             alert("Bạn phải đăng nhập để bình luận");
         }
+    });
+
+    $(".btn-search").click(function () {
+        console.log($(".search-box").val());
+        localStorage.setItem("search", $(".search-box").val());
+
+        window.location.replace("./form_filmHanhDong.html");
     });
 });

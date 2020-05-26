@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    // console.log(localStorage.getItem("search") === null);
+    // alert(localStorage.getItem("search") == "null");
+
     function setCookie(cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
@@ -6,9 +9,9 @@ $(document).ready(function () {
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
     if (
-        localStorage.getItem("search") === null ||
-        localStorage.getItem("search") === "" ||
-        localStorage.getItem("search") === undefined
+        localStorage.getItem("search") == "null" ||
+        localStorage.getItem("search") == "" ||
+        localStorage.getItem("search") == "undefined"
     ) {
         console.log(localStorage.getItem("genre_id"));
         $.ajax({
@@ -25,7 +28,12 @@ $(document).ready(function () {
                     var genre = "HanhDong";
                 } else if (localStorage.getItem("genre_id") == 2) {
                     var genre = "KinhDi";
+                } else if (localStorage.getItem("genre_id") == 3) {
+                    var genre = "VoThuat";
+                } else if (localStorage.getItem("genre_id") == 4) {
+                    var genre = "ThanThoai";
                 }
+                console.log();
                 for (let i = 1; i <= l; i++) {
                     var tmp_str = "movie_" + i;
                     var tmp_link =
@@ -37,6 +45,8 @@ $(document).ready(function () {
                         class: "poster",
                         attr: {
                             src: tmp_link,
+                            "data-id": obj[tmp_str].id,
+                            "data-genre": obj[tmp_str].genre,
                         },
                     }).appendTo(a);
                     var p = $("<p>", {

@@ -3,7 +3,7 @@ $genre_id = $_POST['genre'];
 
 require_once('conn.php');
 
-$sql = "SELECT movies.movie_id, movies.title 
+$sql = "SELECT movies.movie_id, movies.title,movie_genre.genre_id
     FROM movies,movie_genre 
     WHERE movies.movie_id = movie_genre.movie_id AND movie_genre.genre_id = $genre_id
     ORDER BY movie_id DESC 
@@ -20,7 +20,7 @@ if ($result) {
     while ($row = mysqli_fetch_row($result)) {
         $target_dir =  $row[0] . ".jpg";
         $data{
-            'movie_' . $i} = array('link' => $target_dir, 'title' => $row[1]);
+            'movie_' . $i} = array('link' => $target_dir, 'title' => $row[1], 'genre' => $row[2], 'id' => $row[0]);
         //echo $target_dir . "-" .$row[1]. "-" ;
         $i++;
     }

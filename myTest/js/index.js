@@ -4,7 +4,7 @@ $(document).ready(function () {
         url: "../php/loadPage.php",
         success: function (response) {
             var obj = JSON.parse(response);
-            //console.log(obj)
+            console.log(obj);
             for (let i = 1; i <= Object.keys(obj.HanhDong).length; i++) {
                 var tmp_str = "movie_" + i;
 
@@ -36,6 +36,36 @@ $(document).ready(function () {
                 });
                 $(".film_KinhDi div:nth-child(" + (i + 1) + ") p").html(
                     obj.KinhDi[tmp_str].title
+                );
+            }
+            for (let i = 1; i <= Object.keys(obj.VoThuat).length; i++) {
+                var tmp_str = "movie_" + i;
+                console.log(obj.VoThuat[tmp_str]);
+                //var tmp_id_poster = '#action_' + i
+                //var tmp_id_title = '#title_' + i
+                console.log(obj.VoThuat[tmp_str].genre);
+                $(".film_voThuat div:nth-child(" + (i + 1) + ") a img").attr({
+                    src: "../" + obj.VoThuat[tmp_str].link,
+                    "data-id": obj.VoThuat[tmp_str].id,
+                    "data-genre": obj.VoThuat[tmp_str].genre,
+                });
+                $(".film_voThuat div:nth-child(" + (i + 1) + ") p").html(
+                    obj.VoThuat[tmp_str].title
+                );
+            }
+            for (let i = 1; i <= Object.keys(obj.ThanThoai).length; i++) {
+                var tmp_str = "movie_" + i;
+                console.log(obj.ThanThoai[tmp_str]);
+                //var tmp_id_poster = '#action_' + i
+                //var tmp_id_title = '#title_' + i
+                console.log(obj.ThanThoai[tmp_str].genre);
+                $(".film_thanThoai div:nth-child(" + (i + 1) + ") a img").attr({
+                    src: "../" + obj.ThanThoai[tmp_str].link,
+                    "data-id": obj.ThanThoai[tmp_str].id,
+                    "data-genre": obj.ThanThoai[tmp_str].genre,
+                });
+                $(".film_thanThoai div:nth-child(" + (i + 1) + ") p").html(
+                    obj.ThanThoai[tmp_str].title
                 );
             }
         },
@@ -76,6 +106,14 @@ $(document).ready(function () {
     });
     $(".KinhDiMovie").click(function () {
         localStorage.setItem("genre_id", 2);
+        window.location.href = "../html/form_filmHanhDong.html";
+    });
+    $(".VoThuatMovie").click(function () {
+        localStorage.setItem("genre_id", 3);
+        window.location.href = "../html/form_filmHanhDong.html";
+    });
+    $(".ThanThoaiMovie").click(function () {
+        localStorage.setItem("genre_id", 4);
         window.location.href = "../html/form_filmHanhDong.html";
     });
     $(".poster").click(function () {

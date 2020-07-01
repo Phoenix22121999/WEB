@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Phim Hành Động</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" type="text/css" href="../css/main_course.css" />
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="../js/listMovie.js"></script>
+        <style>
+            img.poster {
+                width: 200px !important;
+                height: 300px !important;
+            }
+            .body_web {
+                max-width: 100%;
+                margin: auto;
+                padding: auto;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+            .movie {
+                height: 400px;
+                width: 250px;
+                max-height: 400px;
+                text-align: center;
+                padding: auto;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <div class="btn_group">
+                <a href="./form_dangKy.html"
+                    ><button
+                        type="button"
+                        id="btn_signup"
+                        class="btn_signup btn btn-success"
+                    >
+                        Sign Up
+                    </button></a
+                >
+                <a href="./login.html">
+                    <button
+                        type="button"
+                        id="btn_login"
+                        class="btn_login btn btn-success"
+                        onclick="checkHidden()"
+                    >
+                        Login
+                    </button></a
+                >
+                <button
+                    type="button"
+                    id="btn_logout"
+                    class="btn_logout btn btn-success"
+                    onclick="checkHidden2()"
+                    style="display: none;"
+                >
+                    Logout
+                </button>
+                <a href="../php/list.php"
+                    ><button
+                        type="button"
+                        id="btn_admin"
+                        class="btn_admin btn btn-success"
+                        style="display: none;"
+                    >
+                        ADMIN
+                    </button></a
+                >
+
+                <a href="#" id="name_user" class="name_user">Tên User</a>
+            </div>
+        </div>
+        <div id="Heading_web">
+            <a href="./index.html"
+                ><img src="../picture/logo1.png" alt="my_logo" id="logo"
+            /></a>
+        </div>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- div_menu_Main -->
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapsibleNavbar"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+                class="collapse navbar-collapse justify-content-between"
+                id="collapsibleNavbar"
+            >
+                <div class="navbar-nav">
+                    <div class="nav-item dropdown">
+                        <a
+                            class="navitem nav-link dropdown-toggle"
+                            id="navbardrop"
+                            data-toggle="dropdown"
+                            href="#"
+                            >Thể Loại</a
+                        >
+                        <div class="dropdown-menu">
+                            <!-- menu_type_film -->
+                            <a class="dropdown-item" href="#">Hành Động</a>
+                            <a class="dropdown-item" href="#">Kinh Dị</a>
+                            <a class="dropdown-item" href="#">Võ Thuật</a>
+                            <a class="dropdown-item" href="#">Thần Thoại</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-nav">
+                    <form class="form-inline">
+                        <input
+                            class="form-control mr-sm-2 search-box"
+                            type="text"
+                            placeholder="Search"
+                        />
+                        <button
+                            class="btn btn-success btn-search"
+                            type="button"
+                        >
+                            Search
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div class="body_web col-12"></div>
+    </body>
+</html>

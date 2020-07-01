@@ -1,0 +1,157 @@
+/**/
+/**/
+/**/
+/**/
+* {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color:gray;
+}
+
+.Heading_web {
+    display: inline;
+}
+.btn_group{
+    float: right;
+}
+.btn_logout, 
+.btn_login, 
+.btn_signup,
+.btn_admin,
+.name_user{
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    position: relative;
+}
+#btn_logout, 
+#btn_login, 
+#btn_signup,
+#btn_admin{
+    position: relative;
+    width: 100px;
+}
+
+/*định đạng menu chính dấu ">" có nghĩa chỉ lấy thẻ li ngay phía sau nó*/
+
+a.nav-item:hover {
+    background-color: #848484 !important;
+}
+
+.navbar {
+    background-color: #585858 !important;
+}
+
+.dropdown-menu {
+    text-decoration: none;
+    border-bottom: 1px solid white;
+    display: none;
+    line-height: 40px;
+    color: white;
+    background-color: darkgray;
+}
+
+img.poster {
+    width: 200px !important;
+    height: 300px !important;
+}
+
+div.body_web div {
+    display: inline-block;
+    padding-left: 45px;
+    padding-top: 20px;
+
+}
+
+.container_left {
+    width: 180px;
+    height: 100%;
+    float: right;
+    background-color: #2E2E2E;
+}
+
+/*Định dạng form phim hành động ngoài trang chủ*/
+.film_hanhDong,
+.film_KinhDi,
+.film_voThuat,
+.film_thanThoai {
+    background-color: #2E2E2E;
+    width: 100%;
+    padding-bottom: 10px;
+    color: white;
+    margin-bottom: 30px;
+    box-shadow: 4px 8px 15px 2px rgba(3, 0, 0, 0.9);
+    border-radius: 15px 50px !important;
+
+}
+
+.film_hanhDong a,
+.film_KinhDi a,
+.film_voThuat a,
+.film_thanThoai a {
+    text-decoration: none;
+    display: inline;
+}
+
+p.tiltle,
+p.sub_tiltle {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 18px;
+    width: 200px;
+}
+
+
+@keyframes moveRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100);
+    }
+
+    80% {
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
